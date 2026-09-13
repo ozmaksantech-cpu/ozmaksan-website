@@ -4,10 +4,9 @@
 
 backend:
   name: github
-  repo: YENI_KULLANICI/ozmaksan-website   # TODO: yeni GitHub kullanıcı adın + repo adıyla değiştir
+  repo: ozmaksantech-cpu/ozmaksan-website
   branch: main
-  # cms-oauth Worker'ı yeni Cloudflare hesabına deploy ettikten sonra çıkan URL'yi buraya yaz
-  base_url: https://ozmaksan-cms-auth.YENI_CF_HESABI.workers.dev   # TODO
+  base_url: https://ozmaksan-cms-auth.ozmaksantech.workers.dev
   auth_endpoint: auth
 
 local_backend: true
