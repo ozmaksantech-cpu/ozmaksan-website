@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T22:39:43.784Z",
+  "updatedAt": "2026-09-13T22:45:30.683Z",
   "products": [
     {
       "slug": "akumulasyon-tanklari",
@@ -65,28 +65,6 @@
       "series": "",
       "fuel": "—",
       "capacity": "Projeye özel",
-      "pdf": ""
-    },
-    {
-      "slug": "deneme2-urunu",
-      "name": "Deneme2 Ürünü",
-      "tagline": "Deneme Açıklaması",
-      "image": "assets/products/ake.jpg",
-      "category": "buhar",
-      "series": "",
-      "fuel": "",
-      "capacity": "",
-      "pdf": ""
-    },
-    {
-      "slug": "deneme3",
-      "name": "deneme3",
-      "tagline": "debene 3 kısa ",
-      "image": "assets/products/1764869161400.jpg",
-      "category": "buhar",
-      "series": "",
-      "fuel": "",
-      "capacity": "",
       "pdf": ""
     },
     {
@@ -321,17 +299,6 @@
       "pdf": ""
     },
     {
-      "slug": "stajyer",
-      "name": "Stajyer",
-      "tagline": "new",
-      "image": "assets/products/1764869161400.jpg",
-      "category": "buhar",
-      "series": "",
-      "fuel": "",
-      "capacity": "",
-      "pdf": ""
-    },
-    {
       "slug": "steamax-boiler",
       "name": "STEAmAX BUHAR KAZANLARI ",
       "tagline": "Sıvı & Gaz yakıtlı Yüksek Basınçlı Buhar Kazanı",
@@ -385,44 +352,9 @@
       "fuel": "—",
       "capacity": "Projeye özel",
       "pdf": ""
-    },
-    {
-      "slug": "zarttiri-zort",
-      "name": "Zarttiri zort",
-      "tagline": "tek cümlelik kısa açıklama",
-      "image": "assets/products/4.jpg",
-      "category": "kizginyag",
-      "series": "teknik bilgi",
-      "fuel": "yakıt tütürü",
-      "capacity": "sınırsız",
-      "pdf": "assets/catalogs/mudiweb.xlsx"
     }
   ],
   "news": [
-    {
-      "slug": "cift-deneme-haber",
-      "title": "çift deneme haber",
-      "excerpt": "kısa özet",
-      "date": "2026-07-10",
-      "dateLabel": "10 Tem 2026",
-      "image": "assets/news/whatsapp-image-2026-07-09-at-10.55.17.jpeg"
-    },
-    {
-      "slug": "haber-denemesi",
-      "title": "haber denemesi",
-      "excerpt": "deneme özeti",
-      "date": "2026-07-09",
-      "dateLabel": "9 Tem 2026",
-      "image": "assets/news/ake.jpg"
-    },
-    {
-      "slug": "a",
-      "title": "a",
-      "excerpt": "aa",
-      "date": "2026-07-08",
-      "dateLabel": "8 Tem 2026",
-      "image": "assets/news/ake.jpg"
-    },
     {
       "slug": "elektrikli-kizgin-su-kazani-ehwb-avantajlari",
       "title": "Elektrikli Kızgın Su Kazanı (EHWB): Avantajlar ve Kullanım Alanları",
