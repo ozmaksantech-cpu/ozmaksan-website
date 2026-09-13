@@ -351,7 +351,7 @@
             .reduce(function (acc, key) { return acc && acc[key] !== undefined ? acc[key] : undefined; }, site);
           if (value == null) return;
           translateText(String(value), LOCALE).then(function (translated) {
-            el.innerHTML = mdInline(translated);
+            el.innerHTML = el.tagName === "P" ? mdInline(translated) : bodyHtml(translated);
           });
         });
       })

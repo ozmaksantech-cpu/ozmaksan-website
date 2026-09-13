@@ -523,11 +523,11 @@ function kurumsalMain(mode) {
     [t("value.sustainability"), t("value.sustainabilityDesc")],
   ].map(([title, desc]) => `<div class="value-card reveal"><h3>${esc(title)}</h3><p>${esc(desc)}</p></div>`).join("\n        ");
   const missionCards = [
-    [t("corporate.vision"), corporate?.vision],
-    [t("corporate.mission"), corporate?.mission],
-    [t("corporate.companies"), corporate?.companies],
+    [t("corporate.vision"), corporate?.vision, "corporate.vision"],
+    [t("corporate.mission"), corporate?.mission, "corporate.mission"],
+    [t("corporate.companies"), corporate?.companies, "corporate.companies"],
   ].filter(([, text]) => text)
-    .map(([title, text]) => `<div class="mission-card reveal"><h3>${esc(title)}</h3><div>${mdBlocks(text)}</div></div>`)
+    .map(([title, text, key]) => `<div class="mission-card reveal"><h3>${esc(title)}</h3><div data-live-site="${key}">${mdBlocks(text)}</div></div>`)
     .join("\n        ");
 
   return `    ${pageHero(mode, t("page.corporate"), t("page.corporateTitle"), t("page.corporateDesc"), "corporate-wide.jpg", "heroCorporate")}
@@ -535,7 +535,7 @@ function kurumsalMain(mode) {
       <div class="container about-grid">
         <div class="about-visual reveal-left">
           <div class="about-img-stack"><img src="${asset(mode, "assets/media/factory-production.jpg")}" alt="${esc(company.brand)} üretim hattı" loading="lazy" /></div>
-          <div class="about-float-card"><strong>17.000</strong><span>m² Üretim Alanı</span></div>
+          <div class="about-float-card"><strong>17.000</strong><span>${esc(t("page.productionAreaBadge"))}</span></div>
         </div>
         <div class="about-text reveal-right">
           <span class="section-label">${esc(t("home.aboutLabel"))}</span>
@@ -623,12 +623,12 @@ function newsDetailMain(mode, n) {
 /* ---------- page: referanslar ---------- */
 function referanslarMain(mode) {
   const refGallery = [
-    ["ref-abdi-ibrahim.jpg", "Abdi İbrahim — endüstriyel kazan tesisi"],
-    ["ref-saka-holding.jpg", "Saka Holding — sıcak su kazanı projesi"],
-    ["ref-oba-makarna.jpg", "Oba Makarna — kızgın su kazanı kurulumu"],
-    ["site-logistics.jpg", "ÖZMAKSAN — sevkiyat ve lojistik operasyonu"],
-    ["factory-welding.jpg", "Üretim hattı — kaynak ve imalat"],
-    ["factory-assembly.jpg", "Tesis içi montaj ve kalite kontrol"],
+    ["ref-abdi-ibrahim.jpg", t("ref.photo.abdiIbrahim")],
+    ["ref-saka-holding.jpg", t("ref.photo.sakaHolding")],
+    ["ref-oba-makarna.jpg", t("ref.photo.obaMakarna")],
+    ["site-logistics.jpg", t("ref.photo.logistics")],
+    ["factory-welding.jpg", t("ref.photo.welding")],
+    ["factory-assembly.jpg", t("ref.photo.assembly")],
   ].map(([file, alt]) => `<figure class="ref-photo reveal"><img src="${asset(mode, `assets/media/${file}`)}" alt="${esc(alt)}" loading="lazy" /><figcaption>${esc(alt)}</figcaption></figure>`).join("\n        ");
   const grid = references.map((r) => `<div class="ref-cell reveal">${esc(r)}</div>`).join("\n        ");
   const fileBtn = referencesFile
