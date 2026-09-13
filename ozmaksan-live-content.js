@@ -5,10 +5,10 @@
 (function () {
   "use strict";
 
-  var OWNER = "gokhancanozdemir-oss";
-  var REPO = "ozmaksan";
+  var OWNER = "ozmaksantech-cpu";
+  var REPO = "ozmaksan-website";
   var BRANCH = "main";
-  var SITE_PREFIX = "wordpress-site/";
+  var SITE_PREFIX = "";
   var RAW =
     "https://raw.githubusercontent.com/" +
     OWNER +
