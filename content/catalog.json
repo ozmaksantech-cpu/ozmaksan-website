@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-27T09:50:42.893Z",
+  "updatedAt": "2026-09-13T20:35:28.987Z",
   "products": [
     {
       "slug": "akumulasyon-tanklari",
@@ -299,17 +299,6 @@
       "pdf": "assets/catalogs/scotchmax_teknik-tablo-2026.pdf"
     },
     {
-      "slug": "scotchmax",
-      "name": "SCOTCHmax SICAK SU KAZANLARI 2",
-      "tagline": "Sıvı & Gaz yakıtlı Skoç Tip Sıcak Su Kazanı",
-      "image": "assets/products/scotchmax-ana-resi-m.png",
-      "category": "sicaksu",
-      "series": "OUPK.S",
-      "fuel": "Sıvı & Gaz",
-      "capacity": "100.000 Kcal/h - 17.200.000 Kcalh",
-      "pdf": "assets/catalogs/scotchmax_teknik-tablo-2026.pdf"
-    },
-    {
       "slug": "scotchsuper",
       "name": "SCOTCHsuper Boiler",
       "tagline": "Sıvı & gaz yakıtlı skoç tip kızgın su kazanı",
@@ -345,17 +334,6 @@
     {
       "slug": "steamax-boiler",
       "name": "STEAmAX BUHAR KAZANLARI ",
-      "tagline": "Sıvı & Gaz yakıtlı Yüksek Basınçlı Buhar Kazanı",
-      "image": "assets/products/karafiber-steam-boiler-kesilmis.jpg",
-      "category": "buhar",
-      "series": "OSBK",
-      "fuel": "Sıvı & Gaz",
-      "capacity": "600 – 30.000 Kg/h",
-      "pdf": ""
-    },
-    {
-      "slug": "steamax-boiler",
-      "name": "STEAmAX BUHAR KAZANLARI 3",
       "tagline": "Sıvı & Gaz yakıtlı Yüksek Basınçlı Buhar Kazanı",
       "image": "assets/products/karafiber-steam-boiler-kesilmis.jpg",
       "category": "buhar",
