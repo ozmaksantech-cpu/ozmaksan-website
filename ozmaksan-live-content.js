@@ -1,6 +1,13 @@
 /**
  * ÖZMAKSAN — içerik GitHub'dan gelir; CMS Publish = deploy DEĞİL.
  * Metin + görseller raw.githubusercontent üzerinden güncellenir.
+ *
+ * Dil desteği: sayfa /en /ru /ar altındaysa, GitHub'dan gelen (kaynağı
+ * her zaman Türkçe olan) metin önce content/i18n/cache.<dil>.json içindeki
+ * hazır çeviriyle (translate.mjs'in ürettiği önbellek) eşleştirilir; orada
+ * yoksa tarayıcıda canlı ve ücretsiz bir çeviri servisiyle (MyMemory / Google)
+ * anında çevrilir. Böylece yeni yayınlanan bir ürün/haber, çeviri önbelleği
+ * henüz güncellenmemiş olsa bile hiçbir dilde Türkçe kelime bırakmaz.
  */
 (function () {
   "use strict";
@@ -19,6 +26,12 @@
     "/" +
     SITE_PREFIX;
   var CONTENT = RAW + "content";
+
+  function currentLocale() {
+    var m = location.pathname.match(/^\/(en|ru|ar)(?:\/|$)/);
+    return m ? m[1] : "tr";
+  }
+  var LOCALE = currentLocale();
 
   function bust(url) {
     return url + (url.indexOf("?") >= 0 ? "&" : "?") + "t=" + Date.now();
@@ -102,56 +115,176 @@
     });
   }
 
-  function applyProduct(root, data) {
-    var name = root.querySelector("[data-live='name']");
-    var tagline = root.querySelector("[data-live='tagline']");
-    var intro = root.querySelector("[data-live='intro']");
-    var features = root.querySelector("[data-live='features']");
-    if (name && data.name) name.textContent = data.name;
-    if (tagline && data.tagline != null) tagline.textContent = data.tagline;
-    if (intro && data.intro != null) intro.innerHTML = introHtml(data.intro);
-    if (features && data.features != null) {
-      var html = featuresHtml(data.features);
-      if (html) features.innerHTML = html;
-    }
-    if (data.image) {
-      root.querySelectorAll(".product-hero-media img, .gallery-slide img").forEach(function (img, i) {
-        if (i === 0) img.src = assetUrl(data.image);
+  /* ---- Canlı çeviri (dil TR değilse) ---- */
+
+  var i18nCachePromises = {};
+  function getI18nCache(lang) {
+    if (!i18nCachePromises[lang]) {
+      i18nCachePromises[lang] = fetchJson(CONTENT + "/i18n/cache." + lang + ".json").catch(function () {
+        return {};
       });
+    }
+    return i18nCachePromises[lang];
+  }
+
+  function sha256Hex16(str) {
+    if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) {
+      return Promise.resolve(null);
+    }
+    try {
+      var data = new TextEncoder().encode(str);
+      return window.crypto.subtle
+        .digest("SHA-256", data)
+        .then(function (buf) {
+          var bytes = new Uint8Array(buf);
+          var hex = "";
+          for (var i = 0; i < bytes.length; i++) {
+            hex += bytes[i].toString(16).padStart(2, "0");
+          }
+          return hex.slice(0, 16);
+        })
+        .catch(function () { return null; });
+    } catch (e) {
+      return Promise.resolve(null);
     }
   }
 
+  function myMemoryTranslate(text, lang) {
+    var url =
+      "https://api.mymemory.translated.net/get?q=" +
+      encodeURIComponent(text) +
+      "&langpair=tr|" +
+      lang;
+    return fetch(url)
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var out = d && d.responseData && d.responseData.translatedText;
+        if (!out || out === text || /MYMEMORY WARNING|QUERY LENGTH LIMIT/i.test(out)) return null;
+        return out;
+      })
+      .catch(function () { return null; });
+  }
+
+  function googleTranslateFree(text, lang) {
+    var url =
+      "https://translate.googleapis.com/translate_a/single?client=gtx&sl=tr&tl=" +
+      lang +
+      "&dt=t&q=" +
+      encodeURIComponent(text);
+    return fetch(url)
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (Array.isArray(data) && Array.isArray(data[0])) {
+          return data[0].map(function (p) { return p[0]; }).join("");
+        }
+        return null;
+      })
+      .catch(function () { return null; });
+  }
+
+  function liveTranslate(text, lang) {
+    return myMemoryTranslate(text, lang).then(function (out) {
+      if (out) return out;
+      return googleTranslateFree(text, lang);
+    });
+  }
+
+  function skipTranslate(text) {
+    var t = String(text == null ? "" : text).trim();
+    if (!t) return true;
+    if (/^[\d\s+().\-–—%°/,]+$/.test(t)) return true;
+    if (/^https?:\/\//i.test(t)) return true;
+    return false;
+  }
+
+  var translateMemo = {};
+  function translateText(text, lang) {
+    if (!lang || lang === "tr" || skipTranslate(text)) return Promise.resolve(text);
+    var memoKey = lang + "::" + text;
+    if (translateMemo[memoKey]) return translateMemo[memoKey];
+
+    var p = sha256Hex16(text)
+      .then(function (hash) {
+        return getI18nCache(lang).then(function (cache) {
+          var cached = hash && cache ? cache[hash] : null;
+          if (cached) return cached;
+          return liveTranslate(text, lang).then(function (out) { return out || text; });
+        });
+      })
+      .catch(function () { return text; });
+
+    translateMemo[memoKey] = p;
+    return p;
+  }
+
+  /* ---- DOM güncelleme ---- */
+
+  function applyProduct(root, data) {
+    var nameEl = root.querySelector("[data-live='name']");
+    var taglineEl = root.querySelector("[data-live='tagline']");
+    var introEl = root.querySelector("[data-live='intro']");
+    var featuresEl = root.querySelector("[data-live='features']");
+
+    return Promise.all([
+      data.name ? translateText(data.name, LOCALE) : Promise.resolve(null),
+      data.tagline != null ? translateText(data.tagline, LOCALE) : Promise.resolve(null),
+      data.intro != null ? translateText(data.intro, LOCALE) : Promise.resolve(null),
+      data.features != null ? translateText(data.features, LOCALE) : Promise.resolve(null),
+    ]).then(function (res) {
+      var name = res[0], tagline = res[1], intro = res[2], features = res[3];
+      if (nameEl && name) nameEl.textContent = name;
+      if (taglineEl && tagline != null) taglineEl.textContent = tagline;
+      if (introEl && intro != null) introEl.innerHTML = introHtml(intro);
+      if (featuresEl && features != null) {
+        var html = featuresHtml(features);
+        if (html) featuresEl.innerHTML = html;
+      }
+      if (data.image) {
+        root.querySelectorAll(".product-hero-media img, .gallery-slide img").forEach(function (img, i) {
+          if (i === 0) img.src = assetUrl(data.image);
+        });
+      }
+    });
+  }
+
   function applyNews(root, data) {
-    var title = root.querySelector("[data-live='title']");
-    var body = root.querySelector("[data-live='body']");
-    if (title && data.title) title.textContent = data.title;
-    if (body && data.body != null) body.innerHTML = bodyHtml(data.body);
-    if (data.image) {
-      var img = root.querySelector(".news-detail-figure img, .gallery-slide img");
-      if (img) img.src = assetUrl(data.image);
-    }
+    var titleEl = root.querySelector("[data-live='title']");
+    var bodyEl = root.querySelector("[data-live='body']");
+
+    return Promise.all([
+      data.title ? translateText(data.title, LOCALE) : Promise.resolve(null),
+      data.body != null ? translateText(data.body, LOCALE) : Promise.resolve(null),
+    ]).then(function (res) {
+      var title = res[0], body = res[1];
+      if (titleEl && title) titleEl.textContent = title;
+      if (bodyEl && body != null) bodyEl.innerHTML = bodyHtml(body);
+      if (data.image) {
+        var img = root.querySelector(".news-detail-figure img, .gallery-slide img");
+        if (img) img.src = assetUrl(data.image);
+      }
+    });
   }
 
   function applyCard(el, item, kind) {
     if (!item) return;
-    var title = el.querySelector("h3 a, h3");
-    var p = el.querySelector("p");
+    var titleEl = el.querySelector("h3 a, h3");
+    var pEl = el.querySelector("p");
     var img = el.querySelector("img");
-    if (kind === "product") {
-      if (title && item.name) {
-        if (title.tagName === "A") title.textContent = item.name;
-        else title.textContent = item.name;
+    var titleText = kind === "product" ? item.name : item.title;
+    var descText = kind === "product" ? item.tagline : item.excerpt;
+
+    Promise.all([
+      titleText ? translateText(titleText, LOCALE) : Promise.resolve(null),
+      descText != null ? translateText(descText, LOCALE) : Promise.resolve(null),
+    ]).then(function (res) {
+      var title = res[0], desc = res[1];
+      if (titleEl && title) titleEl.textContent = title;
+      if (pEl && desc != null) {
+        if (kind === "product") pEl.textContent = desc;
+        else pEl.innerHTML = mdInline(desc);
       }
-      if (p && item.tagline != null) p.textContent = item.tagline;
       if (img && item.image) img.src = assetUrl(item.image);
-    } else {
-      if (title && item.title) {
-        if (title.tagName === "A") title.textContent = item.title;
-        else title.textContent = item.title;
-      }
-      if (p && item.excerpt != null) p.innerHTML = mdInline(item.excerpt);
-      if (img && item.image) img.src = assetUrl(item.image);
-    }
+    });
   }
 
   /* Görseller CDN'de yoksa GitHub'dan dene */
@@ -164,8 +297,8 @@
       if (!src || /raw\.githubusercontent\.com/i.test(src)) return;
       t.dataset.ghTried = "1";
       var clean = src.replace(/^https?:\/\/[^/]+\//, "").replace(/^\.\.\//, "").replace(/^\/+/, "");
-      if (clean.indexOf("assets/") === 0 || clean.indexOf("wordpress-site/") === 0) {
-        t.src = assetUrl(clean.replace(/^wordpress-site\//, ""));
+      if (clean.indexOf("assets/") === 0) {
+        t.src = assetUrl(clean);
       } else if (clean) {
         t.src = assetUrl(clean);
       }
@@ -176,14 +309,14 @@
   var productRoot = document.querySelector("[data-live-product]");
   if (productRoot) {
     fetchJson(CONTENT + "/products/" + encodeURIComponent(productRoot.getAttribute("data-live-product")) + ".json")
-      .then(function (data) { applyProduct(productRoot, data); })
+      .then(function (data) { return applyProduct(productRoot, data); })
       .catch(function () {});
   }
 
   var newsRoot = document.querySelector("[data-live-news]");
   if (newsRoot) {
     fetchJson(CONTENT + "/news/" + encodeURIComponent(newsRoot.getAttribute("data-live-news")) + ".json")
-      .then(function (data) { applyNews(newsRoot, data); })
+      .then(function (data) { return applyNews(newsRoot, data); })
       .catch(function () {});
   }
 

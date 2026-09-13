@@ -1,6 +1,9 @@
-name: Update content catalog
+name: Update content catalog and translations
 
-# CMS Publish sonrası katalog güncelle — Netlify/CF deploy YOK
+# CMS Publish sonrası katalog + çeviri önbelleğini güncelle — Netlify/CF deploy YOK.
+# ozmaksan-live-content.js bu dosyaları GitHub raw'dan doğrudan okuyup
+# sayfada anında uygular; bu commit content/** altında olduğu için
+# netlify.toml -> _build/should-build.sh build'i atlar (kredi harcanmaz).
 on:
   push:
     branches: [main]
@@ -8,6 +11,7 @@ on:
       - "content/products/**"
       - "content/news/**"
       - "content/site.json"
+  workflow_dispatch: {}
 
 concurrency:
   group: catalog
@@ -27,14 +31,18 @@ jobs:
           node-version: "20"
       - name: Write catalog
         run: node _build/write-catalog.mjs
+      - name: Translate content (free — DeepL key yoksa MyMemory/Google kullanılır)
+        run: node _build/translate.mjs
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/catalog.json
+          git add content/catalog.json content/i18n/
           if git diff --staged --quiet; then
-            echo "catalog unchanged"
+            echo "catalog/translations unchanged"
             exit 0
           fi
-          git commit -m "chore: refresh content catalog"
+          git commit -m "chore: refresh content catalog + translation cache"
           git push
