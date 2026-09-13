@@ -748,7 +748,7 @@ function staticDoc({ title, description, active, main, pageSlug = active }) {
   const mapHref = relRoot ? `${relRoot}/ozmaksan-export-map.js` : "ozmaksan-export-map.js";
   const langScript = relRoot ? `${relRoot}/ozmaksan-lang.js` : "ozmaksan-lang.js";
   const liveHref = relRoot ? `${relRoot}/ozmaksan-live-content.js` : "ozmaksan-live-content.js";
-  const liveScript = localeCode === "tr" ? `<script src="${liveHref}" defer></script>` : "";
+  const liveScript = `<script src="${liveHref}" defer></script>`;
   const contactScript =
     pageSlug === "iletisim"
       ? `<script src="${relRoot ? `${relRoot}/ozmaksan-contact-form.js` : "ozmaksan-contact-form.js"}"></script>`
