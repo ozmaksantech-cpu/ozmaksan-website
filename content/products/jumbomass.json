@@ -1,0 +1,16 @@
+{
+  "slug": "jumbomass",
+  "name": "JUMBOmass Boiler",
+  "series": "Elle Yüklemeli",
+  "category": "sicaksu",
+  "tagline": "Büyük kapasiteli elle yüklemeli katı yakıtlı kazan",
+  "fuel": "Katı Yakıt",
+  "type": "Elle Yüklemeli",
+  "capacity": "Geniş kapasite aralığı",
+  "pressure": "Merkezi ısıtma",
+  "efficiency": "Yüksek verim",
+  "image": "assets/products/jumbomass.jpg",
+  "pdf": "assets/catalogs/jumbomass.pdf",
+  "intro": "JUMBOmass serisi elle yüklemeli katı yakıtlı sıcak su kazanları, EN direktiflerine uygun olarak büyük kapasiteli tesisler için üretilir.\n\nGeniş yanma hacmi ve kolay temizlenebilir tasarımıyla uzun ömürlü ve ekonomik çalışma sağlar.",
+  "features": "Büyük kapasiteli, elle yüklemeli\nGeniş yanma hacmi\nEN direktiflerine uygun\nDayanıklı gövde ve kolay kül temizliği\nEkonomik katı yakıt kullanımı"
+}

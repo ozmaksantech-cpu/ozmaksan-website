@@ -1,0 +1,241 @@
+/**
+ * content/* Decap CMS dosyalarını yükler.
+ * Build her zaman buradan beslenir (statik site + Netlify).
+ */
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import * as defaults from "./data.mjs";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const SITE_ROOT = path.resolve(__dirname, "..");
+const CONTENT = path.join(SITE_ROOT, "content");
+
+/**
+ * Decap monorepo'da media_folder bazen content/.../wordpress-site/assets/... altına
+ * kaydeder; JSON ise /assets/... yazar. Build öncesi dosyaları doğru yere kopyalar.
+ */
+function relocateMisnestedCmsAssets() {
+  const pairs = [
+    [path.join(CONTENT, "products", "wordpress-site", "assets", "products"), path.join(SITE_ROOT, "assets", "products")],
+    [path.join(CONTENT, "products", "wordpress-site", "assets", "catalogs"), path.join(SITE_ROOT, "assets", "catalogs")],
+    [path.join(CONTENT, "news", "wordpress-site", "assets", "news"), path.join(SITE_ROOT, "assets", "news")],
+  ];
+  for (const [srcDir, destDir] of pairs) {
+    if (!fs.existsSync(srcDir)) continue;
+    fs.mkdirSync(destDir, { recursive: true });
+    for (const name of fs.readdirSync(srcDir)) {
+      const src = path.join(srcDir, name);
+      if (!fs.statSync(src).isFile()) continue;
+      const dest = path.join(destDir, name);
+      if (!fs.existsSync(dest) || fs.statSync(src).mtimeMs > fs.statSync(dest).mtimeMs) {
+        fs.copyFileSync(src, dest);
+      }
+    }
+  }
+}
+
+relocateMisnestedCmsAssets();
+
+function readJson(file) {
+  if (!fs.existsSync(file)) return null;
+  let raw = fs.readFileSync(file, "utf8");
+  // PowerShell / Windows BOM
+  if (raw.charCodeAt(0) === 0xfeff) raw = raw.slice(1);
+  return JSON.parse(raw);
+}
+
+/** Decap bazen "/assets/..." yazar; build göreli "assets/..." bekler */
+function normalizeAssetPath(p) {
+  if (!p || typeof p !== "string") return "";
+  return p.replace(/^\/+/, "").replace(/\\/g, "/");
+}
+
+/**
+ * Decap list alanları string veya {name: string} nesnesi olabilir.
+ * Örn. phones: ["a"] veya [{phone:"a"}]
+ */
+function unwrapList(arr, preferredKeys = []) {
+  if (!Array.isArray(arr)) return [];
+  return arr
+    .map((item) => {
+      if (item == null) return "";
+      if (typeof item === "string" || typeof item === "number") return String(item);
+      if (typeof item === "object") {
+        for (const k of preferredKeys) {
+          if (item[k] != null && String(item[k]).trim()) return String(item[k]);
+        }
+        const vals = Object.values(item).filter((v) => typeof v === "string" || typeof v === "number");
+        return vals.length ? String(vals[0]) : "";
+      }
+      return "";
+    })
+    .filter((s) => s.trim());
+}
+
+function normalizeProduct(p) {
+  if (!p || typeof p !== "object") return p;
+  const out = { ...p };
+
+  // Yeni basit form: teknik bilgiler tech altında
+  if (out.tech && typeof out.tech === "object") {
+    for (const k of ["series", "fuel", "type", "capacity", "pressure", "efficiency", "pdf"]) {
+      if (out.tech[k] != null && String(out.tech[k]).trim() !== "") {
+        out[k] = out.tech[k];
+      }
+    }
+  }
+
+  out.image = normalizeAssetPath(out.image);
+  out.images = unwrapList(out.images, ["image", "src", "photo"]).map(normalizeAssetPath).filter(Boolean);
+  out.pdf = normalizeAssetPath(out.pdf);
+
+  // CMS text widget: intro/features string olabilir; dizi de olabilir
+  if (typeof out.intro === "string") {
+    out.intro = out.intro.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean);
+  }
+  if (typeof out.features === "string") {
+    out.features = out.features.split(/\n+/).map((s) => s.trim()).filter(Boolean);
+  }
+  if (typeof out.specs === "string") {
+    try {
+      out.specs = JSON.parse(out.specs);
+    } catch {
+      delete out.specs;
+    }
+  }
+  out.intro = unwrapList(out.intro, ["paragraph", "p", "text"]);
+  out.features = unwrapList(out.features, ["feature", "f", "text"]);
+
+  if (!out.slug && out.name) {
+    out.slug = String(out.name)
+      .toLowerCase()
+      .replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ş/g, "s")
+      .replace(/ı/g, "i").replace(/ö/g, "o").replace(/ç/g, "c")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+      .slice(0, 60);
+  }
+
+  // Eksik alanlara güvenli varsayılan
+  out.series = out.series || "";
+  out.fuel = out.fuel || "—";
+  out.type = out.type || "—";
+  out.capacity = out.capacity || "Projeye özel";
+  out.pressure = out.pressure || "—";
+  out.efficiency = out.efficiency || "—";
+  out.tagline = out.tagline || "";
+  out.pdf = out.pdf || "";
+
+  return out;
+}
+
+function slugify(s) {
+  return String(s || "")
+    .toLowerCase()
+    .replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ş/g, "s")
+    .replace(/ı/g, "i").replace(/ö/g, "o").replace(/ç/g, "c")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+    .slice(0, 60);
+}
+
+function normalizeNews(n, fileSlug = "") {
+  if (!n || typeof n !== "object") return n;
+  const slug = n.slug || slugify(n.title) || fileSlug || "haber";
+  return {
+    ...n,
+    slug,
+    title: n.title || "",
+    excerpt: n.excerpt || "",
+    body: n.body || "",
+    image: normalizeAssetPath(n.image),
+    images: unwrapList(n.images, ["image", "src", "photo"]).map(normalizeAssetPath).filter(Boolean),
+    dateLabel: n.dateLabel || n.date || "",
+  };
+}
+
+function normalizeSite(site) {
+  if (!site) return null;
+  const company = { ...(site.company || {}) };
+  if (Array.isArray(company.phones)) {
+    company.phones = unwrapList(company.phones, ["phone", "value", "label"]);
+  }
+  const about = { ...(site.about || {}) };
+  if (Array.isArray(about.intro)) {
+    about.intro = unwrapList(about.intro, ["paragraph", "p", "text"]);
+  }
+  const pageMedia = {};
+  if (site.pageMedia && typeof site.pageMedia === "object") {
+    for (const [k, v] of Object.entries(site.pageMedia)) {
+      const clean = normalizeAssetPath(v);
+      if (clean) pageMedia[k] = clean;
+    }
+  }
+  return {
+    ...site,
+    company,
+    about,
+    references: unwrapList(site.references, ["company", "ref", "name", "firma"]),
+    sectors: unwrapList(site.sectors, ["sector", "name"]),
+    exportCountries: unwrapList(site.exportCountries, ["country", "name", "ulke"]),
+    auxiliaries: unwrapList(site.auxiliaries, ["item", "name"]),
+    faq: Array.isArray(site.faq) ? site.faq : [],
+    certs: Array.isArray(site.certs) ? site.certs : [],
+    featuredProducts: unwrapList(site.featuredProducts, ["product", "slug", "name"]),
+    referencesFile: normalizeAssetPath(site.referencesFile),
+    corporate: site.corporate && typeof site.corporate === "object" ? site.corporate : null,
+    pageMedia,
+  };
+}
+
+function loadFolderJson(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .sort()
+    .map((f) => readJson(path.join(dir, f)))
+    .filter(Boolean);
+}
+
+const site = normalizeSite(readJson(path.join(CONTENT, "site.json")));
+
+const productDir = path.join(CONTENT, "products");
+let products = loadFolderJson(productDir).map(normalizeProduct);
+if (!products.length) products = (defaults.products || []).map(normalizeProduct);
+
+const newsDir = path.join(CONTENT, "news");
+let news = fs.existsSync(newsDir)
+  ? fs
+      .readdirSync(newsDir)
+      .filter((f) => f.endsWith(".json"))
+      .sort()
+      .map((f) => {
+        const data = readJson(path.join(newsDir, f));
+        return data ? normalizeNews(data, f.replace(/\.json$/i, "")) : null;
+      })
+      .filter(Boolean)
+  : [];
+const newsArrayFile = path.join(CONTENT, "news.json");
+if (!news.length && fs.existsSync(newsArrayFile)) {
+  const arr = readJson(newsArrayFile);
+  if (Array.isArray(arr)) news = arr.map(normalizeNews);
+}
+news.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+
+export const company = site?.company ?? defaults.company;
+export const about = site?.about ?? defaults.about;
+export const faq = site?.faq ?? defaults.faq;
+export const references = site?.references?.length ? site.references : defaults.references;
+export const certs = site?.certs?.length ? site.certs : defaults.certs;
+export const sectors = site?.sectors?.length ? site.sectors : defaults.sectors;
+export const exportCountries = site?.exportCountries?.length ? site.exportCountries : defaults.exportCountries;
+export const auxiliaries = site?.auxiliaries?.length ? site.auxiliaries : defaults.auxiliaries;
+export const featuredProducts = site?.featuredProducts?.length ? site.featuredProducts : defaults.featuredProducts;
+export const referencesFile = site?.referencesFile || "";
+export const corporate = site?.corporate ?? defaults.corporate;
+export const pageMedia = site?.pageMedia ?? {};
+export const nav = defaults.nav;
+export const categories = defaults.categories;
+export { products, news };

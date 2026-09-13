@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <title>ÖZMAKSAN — İçerik Yönetimi</title>
+</head>
+<body>
+  <!-- CMS_BUILD: 2026-07-27-free — GitHub backend, deploy yok -->
+  <script src="https://unpkg.com/decap-cms@3.1.2/dist/decap-cms.js"></script>
+  <script>
+    (function () {
+      function slugify(s) {
+        return String(s || "")
+          .toLowerCase()
+          .replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ş/g, "s")
+          .replace(/ı/g, "i").replace(/ö/g, "o").replace(/ç/g, "c")
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+          .slice(0, 60) || "kayit";
+      }
+      function monthTr(iso) {
+        var m = ["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"];
+        var d = String(iso || "").slice(0, 10).split("-");
+        if (d.length < 3) return iso || "";
+        return Number(d[2]) + " " + m[Number(d[1]) - 1] + " " + d[0];
+      }
+
+      var hooksDone = false;
+      function registerHooks() {
+        if (!window.CMS || !window.CMS.registerEventListener) return false;
+        if (hooksDone) return true;
+        window.CMS.registerEventListener({
+          name: "preSave",
+          handler: function (_ref) {
+            var entry = _ref.entry;
+            var collection = entry.get("collection");
+            var data = entry.get("data");
+            if (collection === "products") {
+              if (!data.get("slug")) data = data.set("slug", slugify(data.get("name")));
+              return data;
+            }
+            if (collection === "news") {
+              if (!data.get("slug")) data = data.set("slug", slugify(data.get("title")));
+              var d = data.get("date") || "";
+              if (d && String(d).indexOf("T") >= 0) d = String(d).slice(0, 10);
+              return data.set("date", d).set("dateLabel", monthTr(d));
+            }
+            return data;
+          },
+        });
+        hooksDone = true;
+        return true;
+      }
+
+      var tries = 0;
+      var timer = setInterval(function () {
+        tries += 1;
+        if (registerHooks() || tries > 40) clearInterval(timer);
+      }, 250);
+    })();
+  </script>
+</body>
+</html>

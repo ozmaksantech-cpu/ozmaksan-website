@@ -1,0 +1,289 @@
+# ÖZMAKSAN — İçerik Paneli (Decap CMS)
+# CMS_BUILD: 2026-07-27-free
+# İçerik Publish = sadece GitHub commit (site deploy YOK, kredi YOK)
+
+backend:
+  name: github
+  repo: YENI_KULLANICI/ozmaksan-website   # TODO: yeni GitHub kullanıcı adın + repo adıyla değiştir
+  branch: main
+  # cms-oauth Worker'ı yeni Cloudflare hesabına deploy ettikten sonra çıkan URL'yi buraya yaz
+  base_url: https://ozmaksan-cms-auth.YENI_CF_HESABI.workers.dev   # TODO
+  auth_endpoint: auth
+
+local_backend: true
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: products
+    label: "1 · Ürünler"
+    label_singular: Ürün
+    description: "Yayınla = GitHub'a kayıt. Site saniyeler içinde güncellenir; Netlify/CF deploy olmaz, kredi harcanmaz. Kalın yazı: B."
+    folder: content/products
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    identifier_field: name
+    summary: "{{name}}"
+    fields:
+      - { label: Ürün adı, name: name, widget: string }
+      - { label: Slug, name: slug, widget: string, required: false, hint: "Boş bırakılırsa otomatik üretilir" }
+      - { label: Kısa açıklama, name: tagline, widget: string, required: false }
+      - label: Kategori
+        name: category
+        widget: select
+        required: false
+        options:
+          - { label: Buhar kazanları, value: buhar }
+          - { label: Kızgın su, value: kizginsu }
+          - { label: Sıcak su, value: sicaksu }
+          - { label: Kızgın yağ, value: kizginyag }
+          - { label: Enerji & tanklar, value: enerji }
+      - label: Ürün fotoğrafı
+        name: image
+        widget: image
+        required: false
+        media_folder: ../../assets/products
+        public_folder: /assets/products
+        choose_url: false
+      - label: Açıklama
+        name: intro
+        widget: markdown
+        required: false
+        buttons: [bold, italic, link]
+        editor_components: []
+        modes: [rich_text]
+        hint: "Kalın yazı için B. Paragrafları boş satırla ayırın."
+      - label: Özellikler
+        name: features
+        widget: markdown
+        required: false
+        buttons: [bold, italic]
+        editor_components: []
+        modes: [rich_text]
+        hint: "Her satıra bir özellik. Kalın için B."
+      - { label: Seri, name: series, widget: string, required: false }
+      - { label: Yakıt, name: fuel, widget: string, required: false }
+      - { label: Tip, name: type, widget: string, required: false }
+      - { label: Kapasite, name: capacity, widget: string, required: false }
+      - { label: Basınç, name: pressure, widget: string, required: false }
+      - { label: Verim, name: efficiency, widget: string, required: false }
+      - label: Katalog PDF
+        name: pdf
+        widget: file
+        required: false
+        media_folder: ../../assets/catalogs
+        public_folder: /assets/catalogs
+        choose_url: false
+
+  - name: news
+    label: "2 · Haberler"
+    label_singular: Haber
+    folder: content/news
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    identifier_field: title
+    summary: "{{title}}"
+    fields:
+      - { label: Başlık, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string, required: false }
+      - label: Tarih
+        name: date
+        widget: datetime
+        date_format: DD.MM.YYYY
+        time_format: false
+        format: YYYY-MM-DD
+      - { label: Tarih etiketi, name: dateLabel, widget: string, required: false }
+      - label: Kısa özet
+        name: excerpt
+        widget: markdown
+        required: false
+        buttons: [bold, italic]
+        editor_components: []
+        modes: [rich_text]
+      - label: Haberin tamamı
+        name: body
+        widget: markdown
+        required: false
+        buttons: [bold, italic, link]
+        editor_components: []
+        modes: [rich_text]
+        hint: "Kalın yazı için B butonu"
+      - label: Fotoğraf
+        name: image
+        widget: image
+        required: false
+        media_folder: ../../assets/news
+        public_folder: /assets/news
+        choose_url: false
+
+  - name: site
+    label: "3 · Firma bilgileri"
+    files:
+      - name: site
+        label: İletişim ve kurumsal
+        file: content/site.json
+        fields:
+          - label: Firma
+            name: company
+            widget: object
+            fields:
+              - { label: Marka, name: brand, widget: string }
+              - { label: Ticari unvan, name: legalName, widget: string, required: false }
+              - { label: Slogan, name: slogan, widget: string, required: false }
+              - { label: Slogan (EN), name: sloganEn, widget: string, required: false }
+              - { label: Kuruluş yılı, name: founded, widget: string, required: false }
+              - { label: Kaçıncı yıl, name: years, widget: string, required: false }
+              - { label: Adres, name: address, widget: text }
+              - label: Telefonlar
+                name: phones
+                widget: list
+                field: { label: Telefon, name: phone, widget: string }
+              - { label: Faks, name: fax, widget: string, required: false }
+              - { label: Mobil, name: mobile, widget: string, required: false }
+              - { label: E-posta, name: email, widget: string }
+              - { label: Web, name: web, widget: string, required: false }
+              - label: Sosyal medya
+                name: social
+                widget: object
+                collapsed: true
+                required: false
+                fields:
+                  - { label: Facebook, name: facebook, widget: string, required: false }
+                  - { label: Instagram, name: instagram, widget: string, required: false }
+                  - { label: LinkedIn, name: linkedin, widget: string, required: false }
+                  - { label: YouTube, name: youtube, widget: string, required: false }
+          - label: Hakkımızda
+            name: about
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - label: Paragraflar
+                name: intro
+                widget: list
+                required: false
+                field:
+                  label: Paragraf
+                  name: paragraph
+                  widget: markdown
+                  buttons: [bold, italic]
+                  editor_components: []
+                  modes: [rich_text]
+              - label: Rakamlar
+                name: stats
+                widget: list
+                required: false
+                fields:
+                  - { label: Değer, name: value, widget: string }
+                  - { label: Önek, name: prefix, widget: string, required: false }
+                  - { label: Sonek, name: suffix, widget: string, required: false }
+                  - { label: Etiket, name: label, widget: string }
+          - label: SSS
+            name: faq
+            widget: list
+            collapsed: true
+            required: false
+            fields:
+              - { label: Soru, name: q, widget: string }
+              - label: Cevap
+                name: a
+                widget: markdown
+                buttons: [bold, italic]
+                editor_components: []
+                modes: [rich_text]
+          - label: Referanslar
+            name: references
+            widget: list
+            collapsed: true
+            required: false
+            field: { label: Firma adı, name: company, widget: string }
+          - label: Sertifikalar
+            name: certs
+            widget: list
+            collapsed: true
+            required: false
+            fields:
+              - { label: Kod, name: code, widget: string }
+              - { label: Açıklama, name: note, widget: string }
+          - label: Sektörler
+            name: sectors
+            widget: list
+            required: false
+            collapsed: true
+            field: { label: Sektör, name: sector, widget: string }
+          - label: İhracat ülkeleri
+            name: exportCountries
+            widget: list
+            required: false
+            collapsed: true
+            field: { label: Ülke, name: country, widget: string }
+          - label: Yardımcı donanımlar
+            name: auxiliaries
+            widget: list
+            required: false
+            collapsed: true
+            field: { label: Kalem, name: item, widget: string }
+          - label: Anasayfa vitrin ürünleri
+            name: featuredProducts
+            widget: list
+            required: false
+            collapsed: true
+            field: { label: Ürün slug, name: product, widget: string }
+          - label: Referans PDF
+            name: referencesFile
+            widget: file
+            required: false
+            media_folder: ../../assets/uploads
+            public_folder: /assets/uploads
+            choose_url: false
+          - label: Kurumsal
+            name: corporate
+            widget: object
+            required: false
+            collapsed: true
+            fields:
+              - label: Vizyon
+                name: vision
+                widget: markdown
+                required: false
+                buttons: [bold, italic]
+                editor_components: []
+                modes: [rich_text]
+              - label: Misyon
+                name: mission
+                widget: markdown
+                required: false
+                buttons: [bold, italic]
+                editor_components: []
+                modes: [rich_text]
+              - label: Şirketlerimiz
+                name: companies
+                widget: markdown
+                required: false
+                buttons: [bold, italic]
+                editor_components: []
+                modes: [rich_text]
+          - label: Sayfa görselleri
+            name: pageMedia
+            widget: object
+            required: false
+            collapsed: true
+            fields:
+              - { label: Anasayfa hakkımızda, name: homeAbout, widget: image, required: false, media_folder: ../assets/media, public_folder: /assets/media, choose_url: false }
+              - { label: Kurumsal bant, name: heroCorporate, widget: image, required: false, media_folder: ../assets/media, public_folder: /assets/media, choose_url: false }
+              - { label: Ürünler bant, name: heroProducts, widget: image, required: false, media_folder: ../assets/media, public_folder: /assets/media, choose_url: false }
+              - { label: Haberler bant, name: heroNews, widget: image, required: false, media_folder: ../assets/media, public_folder: /assets/media, choose_url: false }
+              - { label: Referanslar bant, name: heroReferences, widget: image, required: false, media_folder: ../assets/media, public_folder: /assets/media, choose_url: false }
+              - { label: Sertifikalar bant, name: heroCerts, widget: image, required: false, media_folder: ../assets/media, public_folder: /assets/media, choose_url: false }
+              - { label: İletişim bant, name: heroContact, widget: image, required: false, media_folder: ../assets/media, public_folder: /assets/media, choose_url: false }
