@@ -288,8 +288,8 @@ function homeMain(mode) {
         <div class="about-text reveal-right">
           <span class="section-label">${esc(t("home.aboutLabel"))}</span>
           <h2 class="section-title">${t("home.aboutTitle")}</h2>
-          <p>${mdInline(about.intro[0])}</p>
-          <p>${mdInline(about.intro[1])}</p>
+          <p data-live-site="about.intro.0">${mdInline(about.intro[0])}</p>
+          <p data-live-site="about.intro.1">${mdInline(about.intro[1])}</p>
           <div class="about-stats">${stats}</div>
           <a href="${link(mode, "kurumsal")}" class="btn btn-blue">${esc(t("nav.corporate"))} ${ICON.arrow}</a>
         </div>
@@ -540,7 +540,7 @@ function kurumsalMain(mode) {
         <div class="about-text reveal-right">
           <span class="section-label">${esc(t("home.aboutLabel"))}</span>
           <h2 class="section-title">${t("page.corporateProfile")}</h2>
-          ${about.intro.map((para) => `<p>${mdInline(para)}</p>`).join("\n          ")}
+          ${about.intro.map((para, i) => `<p data-live-site="about.intro.${i}">${mdInline(para)}</p>`).join("\n          ")}
           <div class="about-stats">${stats}</div>
         </div>
       </div>

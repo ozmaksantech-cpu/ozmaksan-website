@@ -338,4 +338,23 @@
       })
       .catch(function () {});
   }
+
+  /* Jenerik site.json metni: <p data-live-site="about.intro.0">...</p> */
+  var siteLiveNodes = document.querySelectorAll("[data-live-site]");
+  if (LOCALE !== "tr" && siteLiveNodes.length) {
+    fetchJson(CONTENT + "/site.json")
+      .then(function (site) {
+        siteLiveNodes.forEach(function (el) {
+          var value = el
+            .getAttribute("data-live-site")
+            .split(".")
+            .reduce(function (acc, key) { return acc && acc[key] !== undefined ? acc[key] : undefined; }, site);
+          if (value == null) return;
+          translateText(String(value), LOCALE).then(function (translated) {
+            el.innerHTML = mdInline(translated);
+          });
+        });
+      })
+      .catch(function () {});
+  }
 })();
