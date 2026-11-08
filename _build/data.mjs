@@ -35,11 +35,13 @@ export const nav = [
 ];
 
 export const categories = [
-  { key: "buhar", label: "Buhar Kazanları", desc: "Skoç tip ve aküple ocaklı yüksek basınçlı buhar üretimi." },
-  { key: "kizginsu", label: "Kızgın Su Kazanları", desc: "Yüksek sıcaklık ve basınçta kızgın su sistemleri." },
-  { key: "sicaksu", label: "Sıcak Su Kazanları", desc: "Yoğuşmalı, sıvı/gaz ve katı yakıtlı merkezi ısıtma." },
-  { key: "kizginyag", label: "Kızgın Yağ Kazanları", desc: "Proses ısıtma için 350°C'ye kadar termal yağ sistemleri." },
-  { key: "enerji", label: "Enerji Geri Kazanım & Basınçlı Kaplar", desc: "Ekonomizer, atık ısı, tanklar ve basınçlı kaplar." },
+  { key: "buhar", label: "Buhar Kazanları", desc: "Skoç tip, ön ocaklı ve elektrikli buhar kazanları." },
+  { key: "kizginsu", label: "Kızgın Su Kazanları", desc: "Skoç tip ve endüstriyel kızgın su kazanları." },
+  { key: "sicaksu", label: "Sıcak Su Kazanları", desc: "Sıvı/gaz yakıtlı, katı yakıtlı, yoğuşmalı ve elektrikli sıcak su kazanları." },
+  { key: "kizginyag", label: "Kızgın Yağ Kazanları", desc: "Sıvı/gaz yakıtlı ve katı yakıtlı kızgın yağ kazanları." },
+  { key: "enerji", label: "Enerji Geri Kazanım Sistemleri", desc: "Biyokütle, atık ısı kazanları, ekonomizerler ve reküperatörler." },
+  { key: "yardimci", label: "Kazan Yardımcı Sistemleri", desc: "Degazörler, kondens ve flaş buhar tankları, blöf tankları, siklonlar, multisiklonlar ve sulu filtreler." },
+  { key: "tank", label: "Endüstriyel Tanklar ve Basınçlı Kaplar", desc: "Genleşme, besi suyu, kızgın yağ rezerv ve depolama tankları ile diğer basınçlı kaplar." },
 ];
 
 export const products = [

@@ -15,12 +15,20 @@ function hashKey(text) {
   return crypto.createHash("sha256").update(String(text)).digest("hex").slice(0, 16);
 }
 
+function readJson(file) {
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {};
+}
+
+// TR kaynak -> translate.mjs çıktısı -> elle yazılmış düzeltmeler (en öncelikli).
+// Böylece ui.tr.json'a eklenen yeni anahtarlar, elle tutulan dosyada olmasa bile ham anahtar adı olarak görünmez.
 function loadUi(locale) {
-  const manual = path.join(__dirname, "i18n", `ui.${locale}.json`);
-  if (fs.existsSync(manual)) return JSON.parse(fs.readFileSync(manual, "utf8"));
-  const translated = path.join(I18N_DIR, `ui.${locale}.json`);
-  if (fs.existsSync(translated)) return JSON.parse(fs.readFileSync(translated, "utf8"));
-  return JSON.parse(fs.readFileSync(path.join(__dirname, "i18n", "ui.tr.json"), "utf8"));
+  const base = readJson(path.join(__dirname, "i18n", "ui.tr.json"));
+  if (locale === "tr") return base;
+  return {
+    ...base,
+    ...readJson(path.join(I18N_DIR, `ui.${locale}.json`)),
+    ...readJson(path.join(__dirname, "i18n", `ui.${locale}.json`)),
+  };
 }
 
 function loadCache(locale) {
@@ -55,7 +63,7 @@ function trNav(cache, ui) {
 }
 
 function trCategories(cache, ui) {
-  const keys = ["buhar", "kizginsu", "sicaksu", "kizginyag", "enerji"];
+  const keys = ["buhar", "kizginsu", "sicaksu", "kizginyag", "enerji", "yardimci", "tank"];
   return tr.categories.map((c, i) => ({
     ...c,
     label: ui[`cat.${keys[i]}`] || trText(cache, c.label),

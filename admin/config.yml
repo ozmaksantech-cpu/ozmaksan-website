@@ -41,10 +41,12 @@ collections:
         required: false
         options:
           - { label: Buhar kazanları, value: buhar }
-          - { label: Kızgın su, value: kizginsu }
-          - { label: Sıcak su, value: sicaksu }
-          - { label: Kızgın yağ, value: kizginyag }
-          - { label: Enerji & tanklar, value: enerji }
+          - { label: Kızgın su kazanları, value: kizginsu }
+          - { label: Sıcak su kazanları, value: sicaksu }
+          - { label: Kızgın yağ kazanları, value: kizginyag }
+          - { label: Enerji geri kazanım sistemleri, value: enerji }
+          - { label: Kazan yardımcı sistemleri, value: yardimci }
+          - { label: Endüstriyel tanklar ve basınçlı kaplar, value: tank }
       - label: Ürün fotoğrafı
         name: image
         widget: image

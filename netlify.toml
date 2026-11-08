@@ -24,6 +24,47 @@
   to = "/ar/index.html"
   status = 200
 
+# Kaldırılan/birleştirilen ürün sayfaları
+[[redirects]]
+  from = "/urun-ekonomizer-rekuperatorler"
+  to = "/urun-ekonomizer"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-ekonomizer-rekuperatorler"
+  to = "/:lang/urun-ekonomizer"
+  status = 301
+
+[[redirects]]
+  from = "/urun-enerji-geri-kazanim"
+  to = "/urunler"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-enerji-geri-kazanim"
+  to = "/:lang/urunler"
+  status = 301
+
+[[redirects]]
+  from = "/urun-ekonomizer-rekuperatorler.html"
+  to = "/urun-ekonomizer"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-ekonomizer-rekuperatorler.html"
+  to = "/:lang/urun-ekonomizer"
+  status = 301
+
+[[redirects]]
+  from = "/urun-enerji-geri-kazanim.html"
+  to = "/urunler"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-enerji-geri-kazanim.html"
+  to = "/:lang/urunler"
+  status = 301
+
 # Decap CMS SPA
 [[redirects]]
   from = "/admin/*"
