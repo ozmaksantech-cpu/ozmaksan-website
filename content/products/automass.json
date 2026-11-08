@@ -1,12 +1,12 @@
 {
-  "pressure": "Merkezi ısıtma",
-  "efficiency": "Yüksek verim",
-  "name": "AUTOmass Boiler",
+  "pressure": "—",
+  "efficiency": "—",
+  "name": "AUTOmass KATI YAKITLI SICAK SU KAZANLARI",
   "slug": "automass",
-  "intro": "OOPK serisi otomatik yüklemeli katı yakıtlı sıcak su kazanları, katı yakıtı helezon vasıtasıyla otomatik besleme prensibiyle çalışır (EN 303-5).\n\nPrina, odun talaşı, fındık kömürü, odun peleti ve meyve kabuğu gibi yakıtlarla çalışabilir; düşük yakıt sarfiyatı sağlar. 100.000 – 800.000 kcal/h.",
-  "tagline": "Otomatik (helezon) yüklemeli katı yakıtlı kazan",
+  "intro": "**Teknik Özet**\n\n• Kullanım Alanı: Merkezi ısıtma sistemleri\n\nÖzmaksan AUTOmass OOPK Serisi Otomatik Yüklemeli Katı Yakıtlı Sıcak Su Kazanları, merkezi ısıtma sistemlerinin sıcak su ihtiyaçlarını karşılamak üzere tasarlanmıştır.\n\nÖzel iç tasarımı, su soğutmalı yanma potası ve otomatik yakıt besleme sistemi sayesinde yüksek ısıl verimlilik, güvenilir işletme ve uzun hizmet ömrü hedeflenmiştir.\n\nHelezonlu yakıt besleme mekanizması ve hassas kontrol paneli sayesinde yakıt beslemesi ile yanma havası kontrollü şekilde yönetilerek verimli yanma sağlar\n\nKazan gövdesi, ısı kayıplarını azaltmak amacıyla yalıtılmış olup ön kapak iç yüzeyinde yüksek sıcaklığa dayanıklı refrakter malzeme kullanılmaktadır. Üretim süreçlerinde kalite kontrol uygulamaları gerçekleştirilmekte ve kazanlar tasarım basıncının 1,5 katında hidrostatik teste tabi tutulmaktadır.\n\nEN 303-5 ve ilgili ulusal ve uluslararası standartlar esas alınarak, güvenli işletme, yüksek verimlilik ve uzun hizmet ömrü hedefiyle tasarlanmıştır.\n\n**Çalışma Prensibi**\n\nAUTOmass OOPK Serisi kazanlarda katı yakıt, depolama bunkerinden helezonlu besleme mekanizması aracılığıyla yanma potasına alttan iletilir.\n\nKontrol paneli üzerinden kazan suyu sıcaklığı izlenirken yakıt besleme motorunun çalışma ve bekleme süreleri işletme koşullarına göre ayarlanabilir.\n\nKazan suyu sıcaklığı belirlenen değere ulaştığında yakıt besleme motoru ve yanma fanı durdurularak sistem bekleme moduna geçer. Sıcaklığın düşmesiyle birlikte sistem yeniden devreye girerek ısıtma işlemini sürdürür.\n\nKazan sıcaklığının 90 °C'ye ulaşması durumunda emniyet limit termostatı devreye girerek yakıt besleme motorunu ve yanma fanını durdurur.\n\nBu otomatik çalışma prensibi sayesinde kazan sıcaklığının kontrol altında tutulması, yakıt tüketiminin optimize edilmesi ve işletme kolaylığı sağlanması amaçlanır.\n\n**Emniyet ve İşletme Koşulları**\n\nAUTOmass OOPK Serisi kazanlarda sıcaklık kontrolü ve yakıt besleme sistemi, güvenli işletme koşullarının desteklenmesi amacıyla birlikte çalışır.\n\nKazan sıcaklığının belirlenen emniyet sınırına ulaşması durumunda limit termostatı, yakıt besleme motorunu ve yanma fanını durdurur.\n\nKazanların tesisata bağlantısı, genleşme sistemi seçimi ve sirkülasyon koşulları, ilgili teknik gereklilikler ve üretici montaj talimatları doğrultusunda gerçekleştirilmelidir.\n\n**Yakıt Seçenekleri**\n\n• Fındık kömür\n\n• Odun peleti\n\n• Odun talaşı\n\n• Pirina\n\n• Meyve kabuğu\n\nKullanılacak yakıtın türü, tane boyutu, nem oranı ve ısıl değeri kazan tasarımı ve yakıt besleme sistemiyle uyumlu olmalıdır.\n\n**Kullanım Alanları**\n\nAUTOmass Serisi kazanlar, katı yakıtla çalışan merkezi sıcak su ısıtma sistemlerinde kullanılmak üzere geliştirilmiştir.\n\nBinaların ve tesislerin ısıtma ihtiyaçlarına yönelik olarak, gerekli kapasite ve yakıt özelliklerine uygun model seçenekleri sunar.",
+  "tagline": "Otomatik yüklemeli katı yakıtlı sıcak su kazanı",
   "pdf": "",
-  "fuel": "Katı Yakıt (Otomatik)",
+  "fuel": "Katı yakıt",
   "series": "OOPK",
   "specs": {
     "columns": [
@@ -49,8 +49,8 @@
     ]
   },
   "capacity": "100.000 – 800.000 kcal/h",
-  "type": "Otomatik Yüklemeli",
-  "image": "assets/media/product-steam-buhar.jpg",
-  "features": "Otomatik helezon besleme sistemi\nÇoklu katı yakıt: prina, talaş, fındık kömürü, pelet, meyve kabuğu\nDüşük yakıt sarfiyatı\nElektronik kontrol paneli\nFan destekli verimli yanma",
+  "type": "Otomatik yüklemeli katı yakıtlı sıcak su kazanı",
+  "image": "assets/products/automass.jpg",
+  "features": "**Otomatik Yakıt Besleme:** Helezonlu besleme sistemi sayesinde katı yakıtın yanma potasına alttan, kontrollü ve sürekli olarak iletilmesi.\n**Su Soğutmalı Yanma Potası:** Kazan gövdesine sabitlenmiş, su soğutmalı yanma potası sayesinde yüksek sıcaklıklara karşı dayanıklılığın artırılması ve deformasyon riskinin azaltılması.\n**Yüksek Isıl Verim:** Özel kazan tasarımı, kontrollü yanma sistemi ve etkin ısı transferi sayesinde %88'e varan ısıl verim sağlanması.\n**Otomatik Yanma Kontrolü:** Kontrol paneli üzerinden yakıt besleme motorunun çalışma ve bekleme sürelerinin ayarlanarak yanma sürecinin yönetilmesi.\n**Fan Destekli Yanma Sistemi:** Yanma havasının fan aracılığıyla sağlanması ve hava debisinin ayarlanabilir klape yardımıyla kontrol edilmesi.\n**Otomatik Sıcaklık Kontrolü:** Kazan suyu sıcaklığının ayarlanan değere ulaşmasıyla yakıt besleme motoru ve yanma fanının durdurularak sistemin bekleme moduna geçmesi.\n**Emniyet Limit Termostatı:** Kazan sıcaklığının 90 °C'ye ulaşması durumunda yakıt besleme motorunu ve yanma fanını durduran sıcaklık emniyet sistemi.\n**Geniş Yakıt Depolama Haznesi:** Yüksek hacimli yakıt bunkeri sayesinde yakıt ikmal sıklığının azaltılması ve işletme sürekliliğinin desteklenmesi.\n**Isı Yalıtımlı Kazan Gövdesi:** Kazan gövdesindeki ısı yalıtımı ve ön kapakta kullanılan refrakter malzeme sayesinde ısı kayıplarının azaltılması.\n**Kolay Bakım ve Temizlik:** Yanma potasına kolay erişim sağlayan tasarım ve ön bölümden manuel kül temizliği yapılabilmesi.",
   "category": "sicaksu"
 }

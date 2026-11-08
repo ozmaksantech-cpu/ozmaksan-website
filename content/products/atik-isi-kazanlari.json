@@ -1,17 +1,17 @@
 {
-  "pressure": "—",
+  "pressure": "Projeye özel",
   "efficiency": "—",
   "name": "ATIK ISI KAZANLARI",
   "slug": "atik-isi-kazanlari",
-  "intro": "Muhtelif proseslerden çıkan Atık Gazların, Isı Enerjilerinin Geri Kazanılmasını sağlar.\n\nKonvansiyonel sistemler ile elektrik üretiminde verim %40'iken atık ısı kazanı kullanımı ile kurulan birleşik güç sistemlerinde %90 verim sağlanır.\n\nKojenerasyon / Trijenerasyon sistemlerinin önemli ekipmanıdır.",
-  "tagline": "Muhtelif proseslerden çıkan ısı ve enerji yüklü Atık gazların ve Egzoz gazlarının Enerjilerinin Geri Kazanılmasını sağlar.",
+  "intro": "**Teknik Özet**\n\n• Tasarım Seçenekleri: Yoğuşmalı / Yoğuşmasız\n\n• Isı Kaynağı: Gaz motoru egzozu / Endüstriyel atık gazlar\n\n• Üretilen Isı Taşıyıcı Akışkan: Buhar / Kızgın Su / Sıcak Su / Kızgın Yağ\n\n• Uygulama Alanları: Kojenerasyon, Trijenerasyon, Endüstriyel Prosesler\n\nÖzmaksan Atık Isı Kazanları, endüstriyel proseslerden ve enerji üretim sistemlerinden kaynaklanan yüksek sıcaklıktaki atık gazların içerdiği ısı enerjisinin geri kazanılması amacıyla tasarlanmıştır.\n\nAtık gazların termal enerjisinden yararlanılarak buhar, kızgın su, sıcak su veya kızgın yağ üretimi sağlanır. Böylece tesislerin toplam enerji verimliliği artırılırken yakıt tüketimi ve işletme maliyetlerinin azaltılmasına katkıda bulunulur.\n\nÖzellikle kojenerasyon ve trijenerasyon tesisleri, gaz motorları ve endüstriyel üretim süreçlerinde açığa çıkan atık ısının değerlendirilmesine yönelik çözümler sunar.\n\nAtık gazın sıcaklığı, debisi, bileşimi ve tesisin enerji ihtiyacına bağlı olarak yoğuşmalı veya yoğuşmasız tasarım seçenekleriyle projeye özel olarak üretilir.\n\n**Çalışma Prensibi**\n\n**Yoğuşmasız Atık Isı Kazanları**\n\nYüksek sıcaklıktaki atık gazların ısı enerjisi, ısı transfer yüzeyleri aracılığıyla proses akışkanına aktarılarak geri kazanılır. Gaz sıcaklığı, yoğuşma oluşmayacak işletme koşullarında düşürülerek buhar, kızgın su, sıcak su veya kızgın yağ üretimi gerçekleştirilir.\n\n**Yoğuşmalı Atık Isı Kazanları**\n\nAtık gazların sıcaklığı, uygun proses koşullarında su buharının çiğlenme noktasının altına düşürülerek yoğuşma sağlanır. Yoğuşma sırasında açığa çıkan gizli ısı enerjisinin de geri kazanılması sayesinde, özellikle düşük sıcaklıklı sıcak su uygulamalarında daha yüksek enerji geri kazanımı elde edilebilir.",
+  "tagline": "Gaz motoru egzozu ve endüstriyel atık gazlardan ısı geri kazanımı",
   "pdf": "",
   "sourceUrl": "https://ozmaksan.com.tr/urunler/1008/enerji-geri-kazanım-ekipmanları/1019/atık-ısı-kazanları.aspx",
   "fuel": "—",
   "series": "",
   "capacity": "Projeye özel",
-  "type": "—",
+  "type": "Atık Isı Kazanı",
   "image": "assets/products/atik-isi-kazanlari.jpg",
-  "features": "deneme1\ndeneme2\n",
+  "features": "**Yüksek Enerji Geri Kazanımı:** Atık gazların içerdiği ısı enerjisinin değerlendirilmesiyle tesisin toplam enerji verimliliğinin artırılması.\n**Yoğuşmalı ve Yoğuşmasız Tasarım:** Atık gaz özelliklerine ve proses ihtiyaçlarına uygun farklı ısı geri kazanım seçenekleri.\n**Esnek Enerji Üretimi:** Buhar, kızgın su, sıcak su veya kızgın yağ üretimine yönelik projeye özel tasarım olanakları.\n**Kojenerasyon ve Trijenerasyon Uyumu:** Gaz motorları ve enerji üretim sistemlerinden kaynaklanan atık ısının geri kazanılmasına uygun mühendislik çözümleri.\n**Düşük İşletme Maliyetleri:** Geri kazanılan enerjinin kullanılmasıyla ilave yakıt ihtiyacının ve enerji maliyetlerinin azaltılması.\n**Çevresel Sürdürülebilirlik:** Atık enerjinin değerlendirilmesi sayesinde yakıt tüketiminin ve buna bağlı karbon emisyonlarının azaltılmasına katkı sağlanması.\n**Projeye Özel Mühendislik:** Atık gaz debisi, sıcaklığı, bileşimi, izin verilen basınç kaybı ve işletme koşullarına göre sistem tasarımı.",
   "category": "enerji"
 }

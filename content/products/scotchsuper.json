@@ -1,18 +1,18 @@
 {
   "slug": "scotchsuper",
-  "name": "SCOTCHsuper Boiler",
+  "name": "SCOTCHsuper KIZGIN SU KAZANLARI",
   "series": "OKSK",
   "category": "kizginsu",
-  "tagline": "Sıvı & gaz yakıtlı skoç tip kızgın su kazanı",
-  "fuel": "Sıvı & Gaz",
-  "type": "Skoç Tip",
-  "capacity": "100.000 – 10.000.000 kcal/h",
-  "pressure": "24 bar'a kadar",
+  "tagline": "Sıvı ve gaz yakıtlı Skoç tipi, üç geçişli, yüksek verimli kızgın su kazanı",
+  "fuel": "Sıvı ve Gaz Yakıt",
+  "type": "Skoç Tipi, Üç Geçişli, Duman Borulu",
+  "capacity": "20.000.000 kcal/h'ye kadar",
+  "pressure": "20 bar'a kadar",
   "efficiency": "%90 – 92",
-  "image": "assets/media/product-steam-27tph.jpg",
+  "image": "assets/products/scotchsuper.jpg",
   "pdf": "assets/catalogs/scotchsuper.pdf",
-  "intro": "OKSK serisi sıvı ve gaz yakıtlı kızgın su kazanları uluslararası skoç tip olarak dizayn edilmiştir. 100.000 – 10.000.000 kcal/h gibi çok geniş bir kapasite aralığında üretilir.\n\nGeniş su hacmi ve optimum ısıl denge uzun ömür sağlar; uygun brülör seçimiyle düşük NOx'lu mükemmel yanma elde edilir.",
-  "features": "Uluslararası skoç tip tasarım\n24 bar'a kadar çalışma basıncı\n10.000.000 kcal/h'e varan kapasite\nST 35.8 dikişsiz kazan boruları (DIN 17175/2448)\n17Mn4 / 19Mn6 özel kazan sacı",
+  "intro": "**Teknik Özet**\n\n• Isı Yalıtımı: Yüksek Yoğunluklu Isı Yalıtımı\n\nÖzmaksan SCOTCHsuper Kızgın Su Kazanları, uluslararası Skoç tipi kazan tasarım prensipleri esas alınarak yüksek verimlilik, güvenilir işletme ve uzun hizmet ömrü hedefiyle tasarlanmıştır.\n\n2014/68/EU Basınçlı Ekipmanlar Direktifi (PED) ve EN 12953 standart serisinin ilgili gereklilikleri esas alınarak tasarlanmakta ve üretilmektedir.\n\nÜç geçişli duman borulu yapısı, geniş su hacmi ve optimize edilmiş ısı transfer yüzeyleri sayesinde endüstriyel tesislerin yüksek sıcaklıkta proses suyu ihtiyaçlarına etkin ve ekonomik çözümler sunar.\n\nÜretimin her aşamasında kalite kontrol süreçleri uygulanmakta, imalat ve test işlemleri ilgili standartlara uygun olarak gerçekleştirilmektedir.",
+  "features": "**Yüksek Isıl Verim:** Optimize edilmiş yanma odası, duman gazı geçişleri ve ısı transfer yüzeyleri sayesinde yüksek verimli\n**Üç Geçişli Skoç Tipi Tasarım:** Duman gazlarının kazan içerisinde etkin dolaşımını sağlayan üç geçişli yapı ile yüksek ısı transfer performansı.\n**Geniş Su Hacmi:** Yüksek su hacmi sayesinde dengeli sıcaklık dağılımı, kararlı işletme koşulları ve uzun hizmet ömrü.\n**Düşük NOx Emisyonu:** Yanma odası tasarımı sayesinde düşük NOx emisyonlu yanma sistemlerinin kullanımına uygun yapı.\n**Dayanıklı Ön Kapak:** 1300°C sıcaklığa dayanıklı özel refrakter malzeme ile izole edilmiş ön kapak tasarımı.\n**Kolay Bakım ve Kontrol:** Ön ve arka kapak tasarımları sayesinde duman borularına ve ısı transfer yüzeylerine kolay erişim, temizlik ve bakım imkânı.\n**Güvenli İşletme:** İlgili işletme ve emniyet donanımlarıyla desteklenen, güvenilir çalışma koşullarına uygun tasarım.\n**Düşük Isı Kayıpları:** Kazan gövdesinde uygulanan yüksek yoğunluklu ısı yalıtımı ve paslanmaz sac veya alüminyum dış kaplama sayesinde minimum ısı kaybı.\n**Enerji Tasarrufu:** Düşük karşı basınçlı yanma odası tasarımı sayesinde brülör elektrik tüketiminin azaltılmasına katkı.\n**Kaliteli İmalat:** Kaynaklı imalat, radyografik muayene ve hidrostatik basınç testleriyle desteklenen kalite kontrol süreçleri.\n**Opsiyonel Ekipmanlar:** Ekonomizer, ilave kontrol ve otomasyon sistemleri ile işletme ihtiyaçlarına uygun farklı donanım seçenekleri.\n**Paket Sistem Çözümleri:** Talep doğrultusunda yardımcı ekipmanlarıyla birlikte paket ünite olarak teslimat imkânı.",
   "specs": {
     "columns": [
       "Model",
@@ -52,5 +52,8 @@
         "10.000.000"
       ]
     ]
-  }
+  },
+  "images": [
+    "assets/products/scotchsuper-2.jpg"
+  ]
 }

@@ -1,16 +1,16 @@
 {
   "slug": "steampack",
-  "name": "STEAMpack Boiler",
+  "name": "STEAMpack BUHAR KAZANLARI",
   "series": "Paket Ünite",
   "category": "buhar",
-  "tagline": "Tak-çalıştır paket (skid) buhar sistemi",
-  "fuel": "Sıvı & Gaz",
+  "tagline": "Sıvı ve gaz yakıtlı karşı basınçlı kompakt buhar kazanı",
+  "fuel": "Sıvı ve gaz yakıt",
   "type": "Paket / Skid Ünite",
-  "capacity": "Talebe göre",
-  "pressure": "2014/68/EU uygun",
-  "efficiency": "Yüksek verim",
+  "capacity": "260 – 3.000 kg/h",
+  "pressure": "20 bar’a kadar",
+  "efficiency": "%90–92",
   "image": "assets/products/steampack.jpg",
   "pdf": "assets/catalogs/steampack.pdf",
-  "intro": "STEAMpack paket buhar sistemleri; buhar kazanı ile birlikte pompa grubu, emniyet ekipmanları, kolektörler ve tüm yardımcı donanımların tek bir şase üzerine monte edildiği tak-çalıştır çözümlerdir.\n\n2014/68/EU basınçlı ekipman yönetmeliğine uygun üretilir; hızlı devreye alma ve kompakt yerleşim sağlar.",
-  "features": "Komple paket (skid) çözüm\nPompa grubu, emniyet ve kontrol ekipmanları dahil\nHızlı devreye alma\n2014/68/EU yönetmeliğine uygun\nMinimum saha işçiliği, kompakt yerleşim"
+  "intro": "OPBK Serisi Sıvı ve Gaz Yakıtlı Buhar Kazanları, Karşı Basınçlı kazan teknolojisi esas alınarak yüksek verim, güvenli işletme ve uzun kullanım ömrü sağlayacak şekilde tasarlanmıştır.\n\nKompakt gövde yapısı sayesinde az yer kaplarken, küçük hacmine rağmen yüksek performans sunar. Geniş su ve buhar hacmi sayesinde kaliteli, dengeli ve doymuş buhar üretimi sağlar. Optimum ısı dağılımı sağlayan dayanıklı konstrüksiyonu ve etkili gövde izolasyonu, ısı kayıplarını azaltarak uzun ömürlü ve ekonomik bir işletme sağlar.\n\nÜretim ve kalite kontrol süreçleri; 2014/68/EU Basınçlı Ekipmanlar Direktifi, DIN EN 12953 ve AD 2000-Merkblatt gereklerine uygun olarak gerçekleştirilmektedir. Kazan imalatında, duman boruları için DIN EN 10216-2 standardına uygun P235GH (St 35.8) dikişsiz kazan boruları, gövde ve basınçlı parçalar için DIN EN 17155 ve EN 10028 standartlarına uygun P355GH özel kazan sacları, flanşlarda ise EN 10222-2 standardına uygun P245GH malzeme kullanılmaktadır.\n\nKazanlar, kapasite ve tasarım koşullarına bağlı olarak ondüleli veya düz ocak yapısıyla üretilir. Yüksek yanma ve ısı transfer verimi sayesinde düşük yakıt tüketimi sağlarken, düşük NOx emisyon değerleriyle çevreye duyarlı çalışma imkânı sunar.\n\nOPBK Serisi Buhar Kazanları, ihtiyaca göre aşağıdaki opsiyonel ekipmanlarla birlikte paket ünite olarak sunulabilir.\n\n**Opsiyonel Paket Ünite Ekipmanları**\n\n**Kontrol ve Güvenlik Ekipmanları:** Basınç kontrol kolektörü, elektronik su seviye kontrol cihazı, limit ve emniyet presostatları, emniyet seviye probları ve yaylı emniyet ventilleri.\n\n**Besi Suyu Pompa Grubu:** Besi suyu pompaları, filtreler, çekvalfler, kesme ve kontrol vanaları.\n\n**Diğer Ekipmanlar:** Sıvı, gaz veya çift yakıtlı brülör, elektrik ve kontrol paneli, su seviye göstergesi, basınç göstergesi, ana buhar kesme vanası, blöf vanaları ve havalık vanası.\n\n**Bağlantı Nozulları**\n\nBasınç kontrol kolektörü nozulu, ana buhar çıkış nozulu, havalık nozulu, emniyet ventili nozulu, dip blöf nozulu ve su seviye kontrol kolektörü nozulu.\n\n**Teknik Bilgilendirme ve Sipariş Detayları**\n\nTeknik dokumanda belirtilen buhar kapasiteleri, 80 °C besi suyu sıcaklığına göre hesaplanmıştır.\n\nStandart dışı kapasite ve çalışma basınçlarında özel üretim yapılabilir.\n\nFirmamız, ürün özellikleri ve ölçülerinde değişiklik yapma hakkını saklı tutar.\n\nGörseller ve teknik çizimler bilgilendirme amaçlıdır. Nihai özellikler onaylı projeye göre belirlenir.",
+  "features": "Kompakt gövdesi sayesinde az yer kaplar.\nGeniş su ve buhar hacmiyle kaliteli doymuş buhar üretir.\nYüksek kaliteli özel kazan sacları ve dikişsiz kazan boruları kullanılarak üretilir.\nKapasiteye göre ondüleli veya düz ocak tasarımı uygulanır.\nÖn kapak iç yüzeyi, 1.300 °C’ye dayanıklı özel refrakter ile izole edilmiştir.\nKolay açılabilen ve sızdırmaz ön kapak, bakım ve temizliği kolaylaştırır.\nKazan gövdesi kaya yünü ile izole edilir.\nDış gövde paslanmaz çelik veya alüminyum sac ile kaplanır.\nKaynak dikişleri radyografik muayeneye tabi tutulur.\nTalep üzerine paket ünite olarak teslim edilebilir."
 }

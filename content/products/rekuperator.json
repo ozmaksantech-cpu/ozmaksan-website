@@ -1,0 +1,16 @@
+{
+  "slug": "rekuperator",
+  "name": "REKÜPERATÖRLER",
+  "tagline": "Baca gazı ile yanma havası ön ısıtma sistemleri",
+  "category": "enerji",
+  "intro": "**Teknik Özet**\n\n• Kullanım Amacı: Yanma Havasının Ön Isıtılması\n\n• Isı Transfer Prensibi: Gaz – Hava\n\n• Temizlik ve Bakım: Kolay Temizlenebilir Tasarım\n\nÖzmaksan Reküperatörler, endüstriyel kazan ve yakma sistemlerinden çıkan yüksek sıcaklıktaki baca gazlarının içerdiği atık ısı enerjisinin geri kazanılarak yanma havasının ön ısıtılmasını sağlamak amacıyla tasarlanmıştır.\n\nBaca gazlarından geri kazanılan ısı enerjisi, ısı transfer yüzeyleri aracılığıyla taze havaya aktarılır. Böylece yanma havasının sıcaklığı artırılarak yakıt tüketiminin azaltılması ve sistemin toplam enerji verimliliğinin iyileştirilmesi sağlanır.\n\nÖzellikle katı yakıtlı kazanlar ve endüstriyel yakma sistemlerinde kullanılan reküperatörler; baca gazı sıcaklığı, hava debisi, işletme koşulları ve sistemin enerji ihtiyacına göre projeye özel olarak tasarlanır.\n\n**Kullanım Alanları**\n\n• Katı Yakıtlı Buhar Kazanları\n\n• Katı Yakıtlı Sıcak Su ve Kızgın Su Kazanları\n\n• Endüstriyel Yakma Sistemleri\n\n• Biyokütle Yakma Sistemleri\n\n• Endüstriyel Fırınlar ve Isıl Prosesler\n\n**Çalışma Prensibi**\n\nReküperatörler, baca gazı ve taze hava olmak üzere birbirinden bağımsız iki akışkan devresi arasında ısı transferi prensibiyle çalışır.\n\n**Baca Gazı Devresi:** Kazandan çıkan sıcak baca gazları, reküperatör içerisindeki borulardan geçirilerek ısı enerjisinin bir bölümünü ısı transfer yüzeylerine aktarır.\n\n**Taze Hava Devresi:** Boruların dış yüzeylerinden geçen taze hava, baca gazlarından aktarılan enerjiyle ısıtılarak yanma sistemine yönlendirilir.\n\nBu sayede baca gazı sıcaklığı düşürülürken yanma havasının sıcaklığı artırılır ve atık ısı enerjisi yeniden değerlendirilir.",
+  "features": "**Yüksek Enerji Geri Kazanımı:** Baca gazlarının içerdiği atık ısının değerlendirilerek yanma havasının ön ısıtılması.\n**Yakıt Tasarrufu:** Ön ısıtılmış yanma havası sayesinde hedeflenen yanma koşullarına daha düşük yakıt tüketimiyle ulaşılmasına katkı sağlanması.\n**Düşük İşletme Maliyetleri:** Yakıt tüketiminin azaltılmasıyla enerji giderlerinin düşürülmesi.\n**Emisyonların Azaltılması:** Yakıt tasarrufuna bağlı olarak toplam karbon emisyonlarının azaltılmasına katkıda bulunulması.\n**Dayanıklı Isı Transfer Yüzeyleri:** İşletme koşullarına uygun paslanmaz çelik boru tasarımıyla güvenilir ve uzun ömürlü kullanım.\n**Kolay Bakım ve Temizlik:** Isı transfer yüzeylerine erişimi kolaylaştıran ve bakım işlemlerini destekleyen tasarım.\n**Projeye Özel Mühendislik:** Baca gazı sıcaklığı, hava debisi, basınç kayıpları ve işletme koşullarına uygun tasarım seçenekleri.",
+  "type": "Borulu Reküperatör · Projeye Özel",
+  "series": "Reküperatör",
+  "pdf": "",
+  "fuel": "—",
+  "pressure": "—",
+  "efficiency": "—",
+  "capacity": "—",
+  "image": "assets/products/rekuperator.jpg"
+}

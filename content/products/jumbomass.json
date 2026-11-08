@@ -1,16 +1,16 @@
 {
   "slug": "jumbomass",
-  "name": "JUMBOmass Boiler",
+  "name": "JUMBOmass KATI YAKITLI SICAK SU KAZANLARI",
   "series": "Elle Yüklemeli",
   "category": "sicaksu",
-  "tagline": "Büyük kapasiteli elle yüklemeli katı yakıtlı kazan",
-  "fuel": "Katı Yakıt",
-  "type": "Elle Yüklemeli",
-  "capacity": "Geniş kapasite aralığı",
-  "pressure": "Merkezi ısıtma",
-  "efficiency": "Yüksek verim",
+  "tagline": "Elle yüklemeli katı yakıtlı, Skoç tipi üç geçişli sıcak su kazanı",
+  "fuel": "Kömür ve tasarıma uygun diğer katı yakıtlar",
+  "type": "Elle yüklemeli katı yakıtlı sıcak su kazanı · Skoç tipi, üç geçişli",
+  "capacity": "100.000 – 1.000.000 kcal/h",
+  "pressure": "—",
+  "efficiency": "%90'a varan",
   "image": "assets/products/jumbomass.jpg",
   "pdf": "assets/catalogs/jumbomass.pdf",
-  "intro": "JUMBOmass serisi elle yüklemeli katı yakıtlı sıcak su kazanları, EN direktiflerine uygun olarak büyük kapasiteli tesisler için üretilir.\n\nGeniş yanma hacmi ve kolay temizlenebilir tasarımıyla uzun ömürlü ve ekonomik çalışma sağlar.",
-  "features": "Büyük kapasiteli, elle yüklemeli\nGeniş yanma hacmi\nEN direktiflerine uygun\nDayanıklı gövde ve kolay kül temizliği\nEkonomik katı yakıt kullanımı"
+  "intro": "Özmaksan JUMBOmass OKK Serisi Elle Yüklemeli Katı Yakıtlı Sıcak Su Kazanları, merkezi ısıtma sistemlerinin sıcak su ihtiyaçlarını karşılamak üzere tasarlanmıştır.\n\nUluslararası Skoç tipi kazan tasarım prensipleri esas alınarak geliştirilen üç geçişli yapısı, geniş ısı transfer yüzeyleri ve optimize edilmiş yanma odası sayesinde yüksek ısıl verimlilik, güvenilir işletme ve uzun hizmet ömrü hedeflenmiştir.\n\nKazan içerisindeki ısı transferi, radyasyon ve konveksiyon yoluyla gerçekleştirilir. Kompakt tasarımı sayesinde etkin ısı transferi ve yüksek ısıl verim sağlanır.\n\nKazan gövdesi, ısı kayıplarını azaltmak amacıyla cam yünü ile yalıtılmış ve galvaniz sac kaplama ile korunmuştur. Ön kapak iç yüzeyinde ise yüksek sıcaklıklara dayanıklı özel refrakter malzeme kullanılmaktadır.\n\nÜretim ve kalite kontrol süreçleri, 2014/68/AB Basınçlı Ekipmanlar Direktifi (PED) ve ilgili teknik standartların uygulanabilir gereklilikleri doğrultusunda gerçekleştirilmektedir.\n\n**Çalışma Prensibi**\n\nJUMBOmass OKK Serisi kazanlarda katı yakıt, ön kapak üzerinden yanma odasına manuel olarak yüklenir.\n\nYanma sonucunda oluşan sıcak duman gazları, üç geçişli kazan yapısı içerisindeki ısı transfer yüzeylerinden geçerek enerjisini kazan suyuna aktarır.\n\nIsı transferi, yanma odasında ağırlıklı olarak radyasyon, duman gazı geçişlerinde ise konveksiyon yoluyla gerçekleşir.\n\nYanma havası, kazan üzerine monte edilen fan aracılığıyla sağlanır. Kontrol paneli üzerinden kazan suyu sıcaklığı izlenebilir ve çalışma sıcaklığı ayarlanabilir.\n\nKompakt üç geçişli tasarım, ısı transfer yüzeylerinin etkin kullanımını sağlayarak yakıt tüketiminin optimize edilmesine katkıda bulunur.\n\n**Standart Ekipmanlar**\n\n• Yanma havası fanı\n\n• Kazan kontrol paneli\n\n• Kazan kontrol termostatı\n\n• Emniyet limit termostatı\n\n• Fan açma/kapama şalteri\n\n• Kazan termometresi",
+  "features": "**Üç Geçişli Kazan Tasarımı:** Skoç tipi üç geçişli duman gazı dolaşımı sayesinde ısı transferinin artırılması ve yakıttan elde edilen enerjinin etkin şekilde değerlendirilmesi.\n**Yüksek Isıl Verim:** Optimize edilmiş yanma odası ve geniş ısı transfer yüzeyleri sayesinde %90'a varan ısıl verim sağlanması.\n**Geniş Yanma Odası:** Katı yakıtların manuel olarak beslenmesine uygun yanma hacmi sayesinde kontrollü ve etkin yanma koşullarının desteklenmesi.\n**Radyasyon ve Konveksiyonla Isı Transferi:** Yanma sonucu oluşan ısının kazan içerisindeki ısı transfer yüzeyleri aracılığıyla suya etkin şekilde aktarılması.\n**Fan Destekli Yanma Sistemi:** Yanma havasının fan aracılığıyla sağlanması ve yanma sürecinin desteklenmesi.\n**Otomatik Sıcaklık Kontrolü:** Kontrol paneli üzerinden kazan çalışma sıcaklığının ayarlanması ve izlenmesi.\n**Isı Yalıtımlı Kazan Gövdesi:** Cam yünü yalıtım ve galvaniz sac kaplama sayesinde ısı kayıplarının azaltılması.\n**Yüksek Sıcaklığa Dayanıklı Ön Kapak:** Refrakter malzeme ile kaplanmış ön kapak sayesinde yüksek sıcaklıklara karşı dayanıklılığın artırılması.\n**Kolay Yakıt Besleme ve Bakım:** Ön kapak üzerinden manuel yakıt besleme, yanma kontrolü ve bakım işlemlerinin gerçekleştirilebilmesi.\n**Esnek Yakıt Kullanımı:** Uygun teknik düzenlemelerle kömürün yanı sıra farklı katı yakıt türlerinin kullanılabilmesi."
 }
