@@ -50,11 +50,16 @@ function shouldSkip(text) {
   return false;
 }
 
+// Büyük harfle başlayan kelimeler (Özmaksan, TÜBİTAK, Gaziantep…) özel ad olarak çeviride aynen kalır;
+// Türkçe karakter kontrolü yalnızca geri kalan metinde yapılır, yoksa geçerli çeviriler atılıyordu.
+const withoutProperNouns = (s) => String(s).replace(/\p{Lu}[\p{L}\d.\-]*/gu, "");
+
 function isValidTranslation(source, translated, lang) {
   if (!translated || translated === source) return false;
   if (/MYMEMORY WARNING|QUERY LENGTH LIMIT/i.test(translated)) return false;
-  if (lang === "en" && TURKISH_CHARS.test(translated) && TURKISH_CHARS.test(source)) return false;
-  if ((lang === "ru" || lang === "ar") && TURKISH_CHARS.test(translated)) return false;
+  const rest = withoutProperNouns(translated);
+  if (lang === "en" && TURKISH_CHARS.test(rest) && TURKISH_CHARS.test(source)) return false;
+  if ((lang === "ru" || lang === "ar") && TURKISH_CHARS.test(rest)) return false;
   return true;
 }
 

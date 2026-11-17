@@ -11,7 +11,11 @@ if git diff --quiet "$CACHED_COMMIT_REF" "$COMMIT_REF" -- . \
   ':!assets/products/**' \
   ':!assets/news/**' \
   ':!assets/catalogs/**' \
-  ':!assets/uploads/**'
+  ':!assets/uploads/**' \
+  ':!_build/translate.mjs' \
+  ':!_build/should-build.sh' \
+  ':!.github/**' \
+  ':!*.md'
 then
   echo "Skipping build: only CMS content/media changed"
   exit 0
