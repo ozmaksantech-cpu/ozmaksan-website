@@ -40,8 +40,8 @@ export const categories = [
   { key: "sicaksu", label: "Sıcak Su Kazanları", desc: "Sıvı/gaz yakıtlı, katı yakıtlı, yoğuşmalı ve elektrikli sıcak su kazanları." },
   { key: "kizginyag", label: "Kızgın Yağ Kazanları", desc: "Sıvı/gaz yakıtlı ve katı yakıtlı kızgın yağ kazanları." },
   { key: "enerji", label: "Enerji Geri Kazanım Sistemleri", desc: "Biyokütle, atık ısı kazanları, ekonomizerler ve reküperatörler." },
-  { key: "yardimci", label: "Kazan Yardımcı Sistemleri", desc: "Degazörler, kondens ve flaş buhar tankları, blöf tankları, siklonlar, multisiklonlar ve sulu filtreler." },
-  { key: "tank", label: "Endüstriyel Tanklar ve Basınçlı Kaplar", desc: "Genleşme, besi suyu, kızgın yağ rezerv ve depolama tankları ile diğer basınçlı kaplar." },
+  { key: "yardimci", label: "Kazan Yardımcı Sistemleri", desc: "Kondens tankları, degazörler, kızgın yağ rezerv tankları, flaş buhar tankları, baca ve baca gazı arıtma sistemleri, kazan otomasyonu." },
+  { key: "tank", label: "Endüstriyel Tanklar, Reaktörler ve Basınçlı Kaplar", desc: "Endüstriyel depolama tankları, basınçlı kaplar ve proses ekipmanları, reaktörler ve proses tankları." },
 ];
 
 export const products = [

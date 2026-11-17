@@ -219,25 +219,56 @@
 
   /* ---- DOM güncelleme ---- */
 
+  // Çeviri önbelleği (translate.mjs) açıklamayı paragraf paragraf, özellikleri satır satır tutar;
+  // tek parça çevirmek önbellekle hiç eşleşmez ve uzun metinde ücretsiz servisler de başarısız olur.
+  function translateParts(text, splitRe, joiner) {
+    var parts = String(text).split(splitRe).map(function (s) { return s.trim(); }).filter(Boolean);
+    return Promise.all(parts.map(function (p) { return translateText(p, LOCALE); })).then(function (out) {
+      return out.join(joiner);
+    });
+  }
+
+  function quickSpecsHtml(series, rows) {
+    var html = "";
+    if (series) html += '<div class="qs-series"><dt></dt><dd>' + esc(series) + "</dd></div>";
+    rows.forEach(function (r) {
+      if (r.label && r.value) html += "<div><dt>" + esc(r.label) + "</dt><dd>" + esc(r.value) + "</dd></div>";
+    });
+    return html;
+  }
+
   function applyProduct(root, data) {
     var nameEl = root.querySelector("[data-live='name']");
     var taglineEl = root.querySelector("[data-live='tagline']");
     var introEl = root.querySelector("[data-live='intro']");
     var featuresEl = root.querySelector("[data-live='features']");
+    var specsEl = root.querySelector("[data-live='quickSpecs']");
+    var qs = Array.isArray(data.quickSpecs) ? data.quickSpecs : [];
 
     return Promise.all([
       data.name ? translateText(data.name, LOCALE) : Promise.resolve(null),
       data.tagline != null ? translateText(data.tagline, LOCALE) : Promise.resolve(null),
-      data.intro != null ? translateText(data.intro, LOCALE) : Promise.resolve(null),
-      data.features != null ? translateText(data.features, LOCALE) : Promise.resolve(null),
+      data.intro != null ? translateParts(data.intro, /\n\s*\n/, "\n\n") : Promise.resolve(null),
+      data.features != null ? translateParts(data.features, /\n+/, "\n") : Promise.resolve(null),
+      Promise.all(qs.map(function (q) {
+        return Promise.all([translateText(q.label, LOCALE), translateText(q.value, LOCALE)]).then(function (lv) {
+          return { label: lv[0], value: lv[1] };
+        });
+      })),
     ]).then(function (res) {
-      var name = res[0], tagline = res[1], intro = res[2], features = res[3];
+      var name = res[0], tagline = res[1], intro = res[2], features = res[3], specs = res[4];
       if (nameEl && name) nameEl.textContent = name;
       if (taglineEl && tagline != null) taglineEl.textContent = tagline;
       if (introEl && intro != null) introEl.innerHTML = introHtml(intro);
       if (featuresEl && features != null) {
         var html = featuresHtml(features);
         if (html) featuresEl.innerHTML = html;
+      }
+      if (specsEl && specs.length) {
+        // Seri satırının başlığı build'de sayfanın diline göre data-series-label'a yazıldı
+        specsEl.innerHTML = quickSpecsHtml(data.series, specs);
+        var dt = specsEl.querySelector(".qs-series dt");
+        if (dt) dt.textContent = specsEl.getAttribute("data-series-label") || "";
       }
       if (data.image) {
         root.querySelectorAll(".product-hero-media img, .gallery-slide img").forEach(function (img, i) {
@@ -321,7 +352,7 @@
   }
 
   var needCatalog =
-    document.querySelector("[data-product-slug], [data-news-slug], [data-live-catalog]");
+    document.querySelector("[data-product-slug], [data-news-slug], [data-live-catalog], [data-live-pname]");
   if (needCatalog) {
     fetchJson(CONTENT + "/catalog.json")
       .then(function (cat) {
@@ -335,13 +366,20 @@
         document.querySelectorAll("[data-news-slug]").forEach(function (el) {
           applyCard(el, byNews[el.getAttribute("data-news-slug")], "news");
         });
+        // Başlıktaki çekmeceli ürün menüsündeki adlar
+        document.querySelectorAll("[data-live-pname]").forEach(function (el) {
+          var p = byProduct[el.getAttribute("data-live-pname")];
+          if (!p || !p.name) return;
+          translateText(p.name, LOCALE).then(function (n) { if (n) el.textContent = n; });
+        });
       })
       .catch(function () {});
   }
 
-  /* Jenerik site.json metni: <p data-live-site="about.intro.0">...</p> */
+  /* Jenerik site.json metni: <p data-live-site="about.intro.0">...</p>
+     TR'de de çalışır: CMS'teki "Firma bilgileri" değişiklikleri deploy beklemeden görünür. */
   var siteLiveNodes = document.querySelectorAll("[data-live-site]");
-  if (LOCALE !== "tr" && siteLiveNodes.length) {
+  if (siteLiveNodes.length) {
     fetchJson(CONTENT + "/site.json")
       .then(function (site) {
         siteLiveNodes.forEach(function (el) {
@@ -351,7 +389,8 @@
             .reduce(function (acc, key) { return acc && acc[key] !== undefined ? acc[key] : undefined; }, site);
           if (value == null) return;
           translateText(String(value), LOCALE).then(function (translated) {
-            el.innerHTML = el.tagName === "P" ? mdInline(translated) : bodyHtml(translated);
+            // Yalnızca DIV blok içerik (birden çok paragraf); p/summary/li/h2/span satır içi
+            el.innerHTML = el.tagName === "DIV" ? bodyHtml(translated) : mdInline(translated);
           });
         });
       })

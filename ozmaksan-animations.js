@@ -39,6 +39,67 @@
   overlay?.addEventListener("click", closeNav);
   nav?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
 
+  /* ── Ürünler çekmece menüsü ──
+     Masaüstü: üzerine gelince açılır (kapanırken kısa gecikme, fare başlıktan menüye inerken kapanmasın).
+     Mobil: ok butonu ana çekmeceyi, kategori butonları alt çekmeceleri açar. */
+  const drawerItem = document.querySelector(".nav-item.has-drawer");
+  const drawerToggle = drawerItem?.querySelector(".nav-drawer-toggle");
+  const desktopHover = window.matchMedia("(min-width: 769px) and (hover: hover)");
+  let drawerCloseTimer;
+
+  function setDrawer(open) {
+    if (!drawerItem) return;
+    drawerItem.classList.toggle("open", open);
+    drawerToggle?.setAttribute("aria-expanded", String(open));
+  }
+
+  drawerToggle?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setDrawer(!drawerItem.classList.contains("open"));
+  });
+  drawerItem?.addEventListener("mouseenter", () => {
+    if (!desktopHover.matches) return;
+    clearTimeout(drawerCloseTimer);
+    setDrawer(true);
+  });
+  drawerItem?.addEventListener("mouseleave", () => {
+    if (!desktopHover.matches) return;
+    drawerCloseTimer = setTimeout(() => setDrawer(false), 220);
+  });
+  drawerItem?.querySelectorAll(".nav-cat-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const cat = btn.closest(".nav-cat");
+      const open = !cat.classList.contains("open");
+      drawerItem.querySelectorAll(".nav-cat.open").forEach((c) => {
+        c.classList.remove("open");
+        c.querySelector(".nav-cat-btn")?.setAttribute("aria-expanded", "false");
+      });
+      cat.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  });
+  document.addEventListener("click", (e) => {
+    if (drawerItem && !drawerItem.contains(e.target)) setDrawer(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setDrawer(false);
+  });
+
+  /* ── Ürünler sayfası: #kategori ile gelinince o çekmeceyi aç ── */
+  function openDrawerFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const drawer = id && document.getElementById(id);
+    if (!drawer || !drawer.matches("details.prod-drawer")) return null;
+    drawer.open = true;
+    return drawer;
+  }
+  // İlk açılışta tarayıcı, çekmece açılmadan önce kaydırıyor; görseller yüklenince tekrar kaydır
+  if (openDrawerFromHash()) {
+    window.addEventListener("load", () => openDrawerFromHash()?.scrollIntoView({ block: "start" }));
+  }
+  window.addEventListener("hashchange", () => openDrawerFromHash()?.scrollIntoView({ behavior: "smooth", block: "start" }));
+
   /* ── Language dropdown ── */
   const langSwitcher = document.querySelector(".lang-switcher");
   const langToggle = langSwitcher?.querySelector(".lang-toggle");

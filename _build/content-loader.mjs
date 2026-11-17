@@ -106,6 +106,11 @@ function normalizeProduct(p) {
   }
   out.intro = unwrapList(out.intro, ["paragraph", "p", "text"]);
   out.features = unwrapList(out.features, ["feature", "f", "text"]);
+  out.quickSpecs = (Array.isArray(out.quickSpecs) ? out.quickSpecs : [])
+    .map((q) => ({ label: String(q?.label ?? "").trim(), value: String(q?.value ?? "").trim() }))
+    .filter((q) => q.label && q.value);
+  out.order = Number.isFinite(Number(out.order)) && out.order !== "" && out.order != null ? Number(out.order) : 999;
+  out.subcategory = out.subcategory || "";
 
   if (!out.slug && out.name) {
     out.slug = String(out.name)
@@ -161,6 +166,7 @@ function normalizeSite(site) {
   if (Array.isArray(company.phones)) {
     company.phones = unwrapList(company.phones, ["phone", "value", "label"]);
   }
+  company.companies = unwrapList(company.companies, ["company", "name"]);
   const about = { ...(site.about || {}) };
   if (Array.isArray(about.intro)) {
     about.intro = unwrapList(about.intro, ["paragraph", "p", "text"]);
@@ -185,6 +191,15 @@ function normalizeSite(site) {
     featuredProducts: unwrapList(site.featuredProducts, ["product", "slug", "name"]),
     referencesFile: normalizeAssetPath(site.referencesFile),
     corporate: site.corporate && typeof site.corporate === "object" ? site.corporate : null,
+    sectorGroups: (Array.isArray(site.sectorGroups) ? site.sectorGroups : [])
+      .map((g) => ({ title: String(g?.title || ""), items: unwrapList(g?.items, ["item", "sector", "name"]) }))
+      .filter((g) => g.title),
+    certGroups: (Array.isArray(site.certGroups) ? site.certGroups : [])
+      .map((g) => ({
+        title: String(g?.title || ""),
+        items: (Array.isArray(g?.items) ? g.items : []).map((c) => ({ code: String(c?.code || ""), note: String(c?.note || "") })).filter((c) => c.code),
+      }))
+      .filter((g) => g.title),
     pageMedia,
   };
 }
@@ -204,6 +219,7 @@ const site = normalizeSite(readJson(path.join(CONTENT, "site.json")));
 const productDir = path.join(CONTENT, "products");
 let products = loadFolderJson(productDir).map(normalizeProduct);
 if (!products.length) products = (defaults.products || []).map(normalizeProduct);
+products.sort((a, b) => a.order - b.order || String(a.name || "").localeCompare(String(b.name || ""), "tr"));
 
 const newsDir = path.join(CONTENT, "news");
 let news = fs.existsSync(newsDir)
@@ -236,6 +252,8 @@ export const featuredProducts = site?.featuredProducts?.length ? site.featuredPr
 export const referencesFile = site?.referencesFile || "";
 export const corporate = site?.corporate ?? defaults.corporate;
 export const pageMedia = site?.pageMedia ?? {};
+export const sectorGroups = site?.sectorGroups ?? [];
+export const certGroups = site?.certGroups ?? [];
 export const nav = defaults.nav;
 export const categories = defaults.categories;
 export { products, news };

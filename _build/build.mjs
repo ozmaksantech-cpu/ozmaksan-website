@@ -13,7 +13,7 @@ const locale = getLocale(localeCode);
 const {
   company, nav, categories, products, auxiliaries, certs, sectors,
   references, faq, about, exportCountries, news, t, trText,
-  featuredProducts, referencesFile, corporate, pageMedia,
+  featuredProducts, referencesFile, corporate, pageMedia, sectorGroups, certGroups,
 } = loadLocalizedData(localeCode);
 const relRoot = localeCode === "tr" ? "" : "..";
 const outRoot = localeCode === "tr" ? ROOT : path.join(ROOT, localeCode);
@@ -91,6 +91,7 @@ const ICON = {
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
   check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>',
   fax: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 9V2h12v7M6 18h12v4H6zM6 14h12M4 9h16a2 2 0 012 2v5a2 2 0 01-2 2h-1"/></svg>',
+  building: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V5a2 2 0 012-2h7a2 2 0 012 2v16M16 9h2a2 2 0 012 2v10M8 7h2M8 11h2M8 15h2M12 7h1M12 11h1M12 15h1"/></svg>',
   web: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>',
 };
 
@@ -102,10 +103,61 @@ function sectionHead(label, titleHtml, desc = "", center = true) {
   </div>`;
 }
 
+/* ---------- ürün grupları (kategori → alt grup → ürün) ---------- */
+const SUBCAT_ORDER = ["sivigaz", "kati"];
+function groupProducts(items) {
+  const groups = [];
+  for (const p of items) {
+    const key = p.subcategory || "";
+    let g = groups.find((x) => x.key === key);
+    if (!g) groups.push((g = { key, items: [] }));
+    g.items.push(p);
+  }
+  return groups.sort((a, b) => SUBCAT_ORDER.indexOf(a.key) - SUBCAT_ORDER.indexOf(b.key));
+}
+const CARET = '<svg class="caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+
+/* Başlıktaki çekmeceli "Ürünler" menüsü: masaüstünde kategori → ürün kademeli menü, mobilde akordeon */
+function productsDrawer(mode) {
+  const cats = categories
+    .map((c) => {
+      const items = products.filter((p) => p.category === c.key);
+      if (!items.length) return "";
+      const groups = groupProducts(items)
+        .map((g) => `${g.key ? `<p class="nav-subcat">${esc(t(`subcat.${g.key}`))}</p>` : ""}
+              <ul>${g.items.map((p) => `<li><a href="${link(mode, productSlug(p))}" data-live-pname="${esc(p.slug)}">${esc(p.name)}</a></li>`).join("")}</ul>`)
+        .join("");
+      return `<li class="nav-cat">
+            <button type="button" class="nav-cat-btn" aria-expanded="false">${esc(c.label)}${CARET}</button>
+            <div class="nav-cat-panel">
+              <a class="nav-cat-all" href="${link(mode, "urunler")}#${c.key}">${esc(c.label)} ${ICON.arrow}</a>
+              ${groups}
+            </div>
+          </li>`;
+    })
+    .filter(Boolean)
+    .join("\n          ");
+  return `<div class="nav-drawer">
+        <div class="nav-drawer-inner">
+          <ul class="nav-cat-list">
+          ${cats}
+          </ul>
+          <a class="nav-drawer-all" href="${link(mode, "urunler")}">${esc(t("nav.allProducts"))} ${ICON.arrow}</a>
+        </div>
+      </div>`;
+}
+
 /* ---------- chrome ---------- */
 function header(mode, active, pageSlug = active) {
   const links = nav
-    .map((n) => `<a href="${link(mode, n.href)}"${n.href === active ? ' class="active"' : ""}>${esc(n.label)}</a>`)
+    .map((n) => {
+      const a = `<a href="${link(mode, n.href)}"${n.href === active ? ' class="active"' : ""}>${esc(n.label)}</a>`;
+      if (n.href !== "urunler") return a;
+      return `<div class="nav-item has-drawer">
+        ${a}<button type="button" class="nav-drawer-toggle" aria-expanded="false" aria-label="${esc(t("nav.productsMenu"))}">${CARET}</button>
+        ${productsDrawer(mode)}
+      </div>`;
+    })
     .join("\n        ");
   return `<header class="site-header" id="top">
     <div class="header-inner">
@@ -191,7 +243,7 @@ function productCard(mode, p) {
           <img src="${asset(mode, p.image)}" alt="${esc(p.name)}" loading="lazy" />
         </a>
         <div class="product-card-body">
-          <span class="product-series">${esc(p.series)}</span>
+          ${p.series ? `<span class="product-series">${esc(p.series)}</span>` : ""}
           <h3><a href="${link(mode, productSlug(p))}">${esc(p.name)}</a></h3>
           <p>${esc(p.tagline)}</p>
           <div class="product-chips">${chips}</div>
@@ -246,15 +298,15 @@ function homeMain(mode) {
   const stats = about.stats
     .map((s) => `<div class="stat"><strong data-count="${s.value}"${s.prefix ? ` data-prefix="${s.prefix}"` : ""} data-suffix="${s.suffix || ""}">0</strong><span>${esc(s.label)}</span></div>`)
     .join("");
-  const sectorPills = sectors.map((s) => `<span class="sector-pill">${esc(s)}</span>`).join("\n          ");
+  const sectorPills = sectors.map((s, i) => `<span class="sector-pill" data-live-site="sectors.${i}">${esc(s)}</span>`).join("\n          ");
   const refItems = references.slice(0, 22)
     .map((r) => `<span class="refs-marquee-item"><span class="marquee-brand-name">${esc(r)}</span></span>`).join("\n            ");
   const certItems = certs.slice(0, 8)
     .map((c) => `<div class="cert-card"><strong>${esc(c.code)}</strong><span>${esc(c.note)}</span></div>`).join("\n        ");
   const countryChips = exportCountries.map((c) => `<span class="export-country-chip">${esc(c)}</span>`).join("\n        ");
   const faqItems = faq.map((f, i) => `<details class="faq-item"${i === 0 ? " open" : ""}>
-          <summary>${esc(f.q)}</summary>
-          <p>${mdInline(f.a)}</p>
+          <summary data-live-site="faq.${i}.q">${esc(f.q)}</summary>
+          <p data-live-site="faq.${i}.a">${mdInline(f.a)}</p>
         </details>`).join("\n        ");
 
   return `    <section class="hero" aria-label="Ana tanıtım">
@@ -289,7 +341,9 @@ function homeMain(mode) {
           <span class="section-label">${esc(t("home.aboutLabel"))}</span>
           <h2 class="section-title">${t("home.aboutTitle")}</h2>
           <p data-live-site="about.intro.0">${mdInline(about.intro[0])}</p>
-          <p data-live-site="about.intro.1">${mdInline(about.intro[1])}</p>
+          ${about.intro[3]
+            ? `<p data-live-site="about.intro.3">${mdInline(about.intro[3])}</p>`
+            : `<p data-live-site="about.intro.1">${mdInline(about.intro[1] || "")}</p>`}
           <div class="about-stats">${stats}</div>
           <a href="${link(mode, "kurumsal")}" class="btn btn-blue">${esc(t("nav.corporate"))} ${ICON.arrow}</a>
         </div>
@@ -307,12 +361,13 @@ function homeMain(mode) {
     </section>
 
     <section class="section sectors">
-      <div class="container">${sectionHead(t("home.sectors"), t("home.sectorsTitle"))}</div>
+      <div class="container">${sectionHead(t("home.sectors"), t("home.sectorsTitle"), t("home.sectorsDesc"))}</div>
       <div class="sectors-marquee reveal">
         <div class="sectors-marquee-wrap"><div class="sectors-marquee-track">
           ${sectorPills}
         </div></div>
       </div>
+      <div class="container center-cta reveal"><a href="${link(mode, "sektorler")}" class="btn btn-outline">${esc(t("home.allSectors"))} ${ICON.arrow}</a></div>
     </section>
 
     <section class="cta-band">
@@ -388,44 +443,40 @@ function homeMain(mode) {
 
 /* ---------- page: urunler ---------- */
 function urunlerMain(mode) {
-  const catNav = categories
+  // Her kategori bir "çekmece": başlığa tıklayınca ürünler açılır (<details>, JS gerektirmez)
+  const drawers = categories
     .map((c) => {
-      const count = products.filter((p) => p.category === c.key).length;
-      if (!count) return "";
-      return `<a class="cat-card" href="#${c.key}">
-          <h3>${esc(c.label)}</h3>
-          <p>${esc(c.desc)}</p>
-          <span class="cat-more">${esc(t("cat.viewProducts"))} ${ICON.arrow}</span>
-        </a>`;
+      const items = products.filter((p) => p.category === c.key);
+      if (!items.length) return "";
+      const body = groupProducts(items)
+        .map((g) => `${g.key ? `<h3 class="prod-subcat">${esc(t(`subcat.${g.key}`))}</h3>` : ""}
+            <div class="products-grid">
+            ${g.items.map((p) => productCard(mode, p)).join("\n            ")}
+            </div>`)
+        .join("\n            ");
+      return `<details class="prod-drawer" id="${c.key}">
+          <summary>
+            <span class="prod-drawer-text">
+              <span class="prod-drawer-title">${esc(c.label)}</span>
+              <span class="prod-drawer-desc">${esc(c.desc)}</span>
+            </span>
+            <span class="prod-drawer-count">${esc(t("cat.productCount", { count: items.length }))}</span>
+            <span class="prod-drawer-icon" aria-hidden="true">${CARET}</span>
+          </summary>
+          <div class="prod-drawer-body">
+            ${body}
+          </div>
+        </details>`;
     })
     .filter(Boolean)
     .join("\n        ");
 
-  const catSections = categories
-    .map((c) => {
-      const items = products.filter((p) => p.category === c.key);
-      if (!items.length) return "";
-      const cards = items.map((p) => productCard(mode, p)).join("\n          ");
-      return `<div class="prod-cat" id="${c.key}">
-          <div class="prod-cat-head">
-            <h2>${esc(c.label)}</h2>
-            <p>${esc(c.desc)}</p>
-          </div>
-          <div class="products-grid">
-          ${cards}
-          </div>
-        </div>`;
-    })
-    .filter(Boolean)
-    .join("\n");
-
   return `    ${pageHero(mode, t("page.products"), t("page.productsTitle"), t("page.productsDesc"), "factory-production.jpg", "heroProducts")}
     <section class="section products-page-section">
       <div class="container">
-        <div class="cat-grid products-cat-nav">
-        ${catNav}
+        <div class="prod-drawers">
+        ${drawers}
         </div>
-        ${catSections}
       </div>
     </section>
     ${ctaBand(mode)}`;
@@ -455,11 +506,17 @@ function mediaGallery(mode, images, alt, extraClass = "") {
 /* ---------- page: product detail ---------- */
 function productMain(mode, p) {
   const related = products.filter((r) => r.category === p.category && r.slug !== p.slug).slice(0, 3);
-  const quick = [
-    [t("spec.fuel"), p.fuel], [t("spec.type"), p.type], [t("spec.capacity"), p.capacity],
-    [t("spec.pressure"), p.pressure], [t("spec.efficiency"), p.efficiency], [t("spec.series"), p.series],
-  ].filter(([, v]) => v && v !== "—")
+  // Hızlı özellikler: ürün dokümanındaki tablo birebir (quickSpecs); seri/model kodu en üstte ve çevrilmez
+  const seriesRow = p.series
+    ? `<div class="qs-series"><dt>${esc(t("spec.series"))}</dt><dd>${esc(p.series)}</dd></div>`
+    : "";
+  const quickRows = (p.quickSpecs?.length
+    ? p.quickSpecs.map((q) => [q.label, q.value])
+    : [[t("spec.fuel"), p.fuel], [t("spec.type"), p.type], [t("spec.capacity"), p.capacity],
+       [t("spec.pressure"), p.pressure], [t("spec.efficiency"), p.efficiency]])
+    .filter(([k, v]) => k && v && v !== "—")
     .map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("");
+  const quick = seriesRow + quickRows;
   const features = p.features.map((f) => `<li>${ICON.check}<span>${mdInline(f)}</span></li>`).join("\n          ");
   const usage = p.usage
     ? `<div class="usage-block reveal"><h3 class="block-title">${esc(t("product.usage"))}</h3><div class="usage-chips">${p.usage.map((u) => `<span>${esc(u)}</span>`).join("")}</div></div>`
@@ -478,10 +535,9 @@ function productMain(mode, p) {
       <div class="container product-hero">
         <div class="product-hero-media reveal-left">${mediaGallery(mode, [p.image, ...(p.images || [])], p.name)}</div>
         <div class="product-hero-info reveal-right">
-          <span class="product-series">${esc(p.series)}</span>
           <h1 data-live="name">${esc(p.name)}</h1>
           <p class="product-tagline" data-live="tagline">${esc(p.tagline)}</p>
-          <dl class="quick-specs">${quick}</dl>
+          <dl class="quick-specs" data-live="quickSpecs" data-series-label="${esc(t("spec.series"))}">${quick}</dl>
           <div class="product-hero-actions">
             <a href="${link(mode, "iletisim")}" class="btn btn-primary btn-lg">${esc(t("cta.quote"))} ${ICON.arrow}</a>
             ${p.pdf ? `<a href="${asset(mode, p.pdf)}" target="_blank" rel="noopener" class="btn btn-outline btn-lg">${esc(t("product.catalogDownload"))}</a>` : ""}
@@ -490,7 +546,7 @@ function productMain(mode, p) {
       </div>
     </section>
     <section class="section product-detail">
-      <div class="container product-detail-grid">
+      <div class="container product-detail-grid${features ? "" : " product-detail-grid--single"}">
         <div class="product-desc reveal">
           <h2 class="section-title">${esc(t("product.description"))}</h2>
           <div data-live="intro">
@@ -498,12 +554,12 @@ function productMain(mode, p) {
           </div>
           ${usage}
         </div>
-        <aside class="product-features reveal">
+        ${features ? `<aside class="product-features reveal">
           <h3 class="block-title">${esc(t("product.features"))}</h3>
           <ul class="feature-list" data-live="features">
           ${features}
           </ul>
-        </aside>
+        </aside>` : ""}
       </div>
       <div class="container">${specTable(p)}</div>
     </section>
@@ -651,14 +707,44 @@ function referanslarMain(mode) {
 
 /* ---------- page: sertifikalar ---------- */
 function sertifikalarMain(mode) {
-  const grid = certs.map((c) => `<div class="cert-card lg reveal"><strong>${esc(c.code)}</strong><span>${esc(c.note)}</span></div>`).join("\n        ");
+  // Standart grupları (site.json → certGroups); yoksa eski düz sertifika listesi
+  const grid = certGroups.length
+    ? certGroups.map((g, gi) => `<div class="cert-group reveal">
+          <h2 class="cert-group-title" data-live-site="certGroups.${gi}.title">${esc(g.title)}</h2>
+          <ul class="cert-list">
+            ${g.items.map((c, ci) => `<li><strong>${esc(c.code)}</strong><span data-live-site="certGroups.${gi}.items.${ci}.note">${esc(c.note)}</span></li>`).join("\n            ")}
+          </ul>
+        </div>`).join("\n        ")
+    : `<div class="certs-grid lg stagger-children reveal">${certs.map((c) => `<div class="cert-card lg reveal"><strong>${esc(c.code)}</strong><span>${esc(c.note)}</span></div>`).join("\n        ")}</div>`;
   return `    ${pageHero(mode, t("nav.certs"), t("page.certsTitle"), t("page.certsDesc"), "factory-hall.jpg", "heroCerts")}
     <section class="section">
       <div class="container">
         <figure class="certs-banner reveal"><img src="${asset(mode, "assets/media/certs-banner.jpg")}" alt="${esc(company.brand)} sertifika ve onay logoları" loading="lazy" /></figure>
         <p class="lead reveal">${esc(t("page.certsLead"))}</p>
-        <div class="certs-grid lg stagger-children reveal">
+        <div class="cert-groups">
         ${grid}
+        </div>
+      </div>
+    </section>
+    ${ctaBand(mode)}`;
+}
+
+/* ---------- page: sektorler ---------- */
+function sektorlerMain(mode) {
+  const groups = sectorGroups
+    .map((g, gi) => `<div class="sector-group reveal">
+          <span class="sector-group-no">${String(gi + 1).padStart(2, "0")}</span>
+          <h2 data-live-site="sectorGroups.${gi}.title">${esc(g.title)}</h2>
+          <ul>
+            ${g.items.map((it, ii) => `<li data-live-site="sectorGroups.${gi}.items.${ii}">${esc(it)}</li>`).join("\n            ")}
+          </ul>
+        </div>`)
+    .join("\n        ");
+  return `    ${pageHero(mode, t("page.sectors"), t("page.sectorsTitle"), t("page.sectorsDesc"), "factory-aerial.jpg", "heroSectors")}
+    <section class="section">
+      <div class="container">
+        <div class="sector-groups stagger-children">
+        ${groups}
         </div>
       </div>
     </section>
@@ -677,7 +763,7 @@ function iletisimMain(mode) {
           <ul class="contact-list">
             <li><div class="contact-icon">${ICON.pin}</div><div><strong>${esc(t("contact.factory"))}</strong><span>${esc(company.address)}</span></div></li>
             <li><div class="contact-icon">${ICON.phone}</div><div><strong>${esc(t("contact.phone"))}</strong>${phones}</div></li>
-            <li><div class="contact-icon">${ICON.fax}</div><div><strong>${esc(t("contact.fax"))}</strong><span>${esc(company.fax)}</span></div></li>
+            ${company.companies?.length ? `<li><div class="contact-icon">${ICON.building}</div><div><strong>${esc(t("contact.companies"))}</strong><span>${company.companies.map(esc).join("<br />")}</span></div></li>` : ""}
             <li><div class="contact-icon">${ICON.mail}</div><div><strong>${esc(t("contact.email"))}</strong><a href="mailto:${company.email}">${esc(company.email)}</a></div></li>
             <li><div class="contact-icon">${ICON.web}</div><div><strong>${esc(t("contact.web"))}</strong><a href="https://${company.web}" target="_blank" rel="noopener">${esc(company.web)}</a></div></li>
           </ul>
@@ -797,6 +883,7 @@ const pages = [
   { slug: "haberler", title: `${t("nav.news")} | ${company.brand}`, description: trText("ÖZMAKSAN haberleri: projeler, etkinlikler, AR-GE çalışmaları ve sektörel duyurular."), active: "haberler", main: haberlerMain },
   { slug: "referanslar", title: `${t("nav.references")} | ${company.brand}`, description: trText("Mercedes-Benz, Coca-Cola, Aygaz, Emirates, Weatherford, TPAO, TOKİ ve daha fazlası — yurt içi ve yurt dışı referanslar."), active: "referanslar", main: referanslarMain },
   { slug: "sertifikalar", title: `${t("nav.certs")} | ${company.brand}`, description: trText("CE, ISO 9001, TSE, ASME, AD 2000 Merkblatt, TÜV, EPDK, Türk Loydu ve daha fazlası."), active: "sertifikalar", main: sertifikalarMain },
+  { slug: "sektorler", title: `${t("page.sectors")} | ${company.brand}`, description: t("page.sectorsDesc"), active: "sektorler", main: sektorlerMain },
   { slug: "iletisim", title: `${t("nav.contact")} | ${company.brand}`, description: trText("ÖZMAKSAN Gaziantep: 4. OSB Başpınar. Telefon, e-posta ve teklif formu."), active: "iletisim", main: iletisimMain },
 ];
 

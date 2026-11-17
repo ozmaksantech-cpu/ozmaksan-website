@@ -64,6 +64,11 @@ function collectStrings() {
     const d = decodeEntities(v);
     if (!shouldSkip(d)) set.add(d);
   };
+  // Ürün adları çoğunlukla BÜYÜK HARF ("STEAMAX BUHAR KAZANLARI"); shouldSkip bunları kod sanıp atlıyordu.
+  const addName = (v) => {
+    const d = decodeEntities(v).trim();
+    if (d.length >= 2) set.add(d);
+  };
 
   for (const v of Object.values(UI_TR)) add(v);
   for (const n of trData.nav) add(n.label);
@@ -86,8 +91,21 @@ function collectStrings() {
     add(trData.corporate.mission);
     add(trData.corporate.companies);
   }
+  for (const g of trData.sectorGroups || []) {
+    add(g.title);
+    for (const it of g.items || []) add(it);
+  }
+  for (const g of trData.certGroups || []) {
+    add(g.title);
+    for (const c of g.items || []) add(c.note);
+  }
 
   for (const p of trData.products) {
+    addName(p.name);
+    for (const q of p.quickSpecs || []) {
+      add(q.label);
+      add(q.value);
+    }
     add(p.tagline);
     for (const t of p.intro || []) add(t);
     for (const f of p.features || []) add(f);
@@ -95,7 +113,7 @@ function collectStrings() {
     if (p.specs?.columns) for (const col of p.specs.columns) add(col);
     if (p.fuel && p.fuel !== "—") add(p.fuel);
     if (p.type && p.type !== "—") add(p.type);
-    if (p.capacity && !/^projeye/i.test(p.capacity)) add(p.capacity);
+    if (p.capacity && p.capacity !== "—") add(p.capacity);
     if (p.pressure && p.pressure !== "—") add(p.pressure);
     if (p.efficiency && p.efficiency !== "—") add(p.efficiency);
   }

@@ -35,6 +35,8 @@ const products = loadFolder(path.join(CONTENT, "products")).map((p) => ({
   tagline: p.tagline || "",
   image: normalizeAsset(p.image),
   category: p.category || "",
+  subcategory: p.subcategory || "",
+  order: Number.isFinite(Number(p.order)) && p.order !== "" && p.order != null ? Number(p.order) : 999,
   series: p.series || "",
   fuel: p.fuel || "",
   capacity: p.capacity || "",
@@ -50,7 +52,7 @@ const news = loadFolder(path.join(CONTENT, "news")).map((n) => ({
   image: normalizeAsset(n.image),
 }));
 
-products.sort((a, b) => String(a.name || "").localeCompare(String(b.name || ""), "tr"));
+products.sort((a, b) => a.order - b.order || String(a.name || "").localeCompare(String(b.name || ""), "tr"));
 news.sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
 
 const catalog = {

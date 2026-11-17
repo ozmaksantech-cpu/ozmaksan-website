@@ -65,6 +65,227 @@
   to = "/:lang/urunler"
   status = 301
 
+# Kasım 2026: tank ve yardımcı ekipman sayfaları birleştirildi
+[[redirects]]
+  from = "/urun-degazor-ve-kondens-tanklari"
+  to = "/urun-degazor-sistemleri"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-degazor-ve-kondens-tanklari"
+  to = "/:lang/urun-degazor-sistemleri"
+  status = 301
+
+[[redirects]]
+  from = "/urun-degazor-ve-kondens-tanklari.html"
+  to = "/urun-degazor-sistemleri"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-degazor-ve-kondens-tanklari.html"
+  to = "/:lang/urun-degazor-sistemleri"
+  status = 301
+
+[[redirects]]
+  from = "/urun-akumulasyon-tanklari"
+  to = "/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-akumulasyon-tanklari"
+  to = "/:lang/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-akumulasyon-tanklari.html"
+  to = "/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-akumulasyon-tanklari.html"
+  to = "/:lang/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-seperator-tanklari"
+  to = "/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-seperator-tanklari"
+  to = "/:lang/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-seperator-tanklari.html"
+  to = "/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-seperator-tanklari.html"
+  to = "/:lang/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-kum-filtreleri"
+  to = "/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-kum-filtreleri"
+  to = "/:lang/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-kum-filtreleri.html"
+  to = "/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-kum-filtreleri.html"
+  to = "/:lang/urun-basincli-kaplar-ve-proses-ekipmanlari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-n-pentan-depolama-tanklari"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-n-pentan-depolama-tanklari"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-n-pentan-depolama-tanklari.html"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-n-pentan-depolama-tanklari.html"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-butan-tanklari"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-butan-tanklari"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-butan-tanklari.html"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-butan-tanklari.html"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-klor-tanklari"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-klor-tanklari"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-klor-tanklari.html"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-klor-tanklari.html"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-izosiyonat-poliol-depolama-tanklari"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-izosiyonat-poliol-depolama-tanklari"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-izosiyonat-poliol-depolama-tanklari.html"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-izosiyonat-poliol-depolama-tanklari.html"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-yakit-depolama-tanklari"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-yakit-depolama-tanklari"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-yakit-depolama-tanklari.html"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-yakit-depolama-tanklari.html"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-paslanmaz-tanklar"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-paslanmaz-tanklar"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-paslanmaz-tanklar.html"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-paslanmaz-tanklar.html"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-dik-depolama-tanklari"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-dik-depolama-tanklari"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/urun-dik-depolama-tanklari.html"
+  to = "/urun-endustriyel-depolama-tanklari"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/urun-dik-depolama-tanklari.html"
+  to = "/:lang/urun-endustriyel-depolama-tanklari"
+  status = 301
+
 # Decap CMS SPA
 [[redirects]]
   from = "/admin/*"

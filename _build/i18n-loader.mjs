@@ -74,6 +74,8 @@ function trCategories(cache, ui) {
 function trProducts(cache) {
   return tr.products.map((p) => {
     const out = { ...p };
+    out.name = trText(cache, p.name);
+    out.quickSpecs = (p.quickSpecs || []).map((q) => ({ label: trText(cache, q.label), value: trText(cache, q.value) }));
     out.tagline = trText(cache, p.tagline);
     out.intro = trList(cache, p.intro);
     out.features = trList(cache, p.features);
@@ -119,6 +121,17 @@ function trCerts(cache) {
   return (tr.certs || []).map((c) => ({ ...c, note: trText(cache, c.note) }));
 }
 
+function trSectorGroups(cache) {
+  return (tr.sectorGroups || []).map((g) => ({ title: trText(cache, g.title), items: trList(cache, g.items) }));
+}
+
+function trCertGroups(cache) {
+  return (tr.certGroups || []).map((g) => ({
+    title: trText(cache, g.title),
+    items: g.items.map((c) => ({ ...c, note: trText(cache, c.note) })),
+  }));
+}
+
 export function loadLocalizedData(locale = "tr") {
   const ui = loadUi(locale);
   const cache = loadCache(locale);
@@ -141,6 +154,8 @@ export function loadLocalizedData(locale = "tr") {
     featuredProducts: tr.featuredProducts,
     referencesFile: tr.referencesFile,
     pageMedia: tr.pageMedia,
+    sectorGroups: locale === "tr" ? tr.sectorGroups : trSectorGroups(cache),
+    certGroups: locale === "tr" ? tr.certGroups : trCertGroups(cache),
     corporate: locale === "tr" ? tr.corporate : {
       vision: trText(cache, tr.corporate?.vision || ""),
       mission: trText(cache, tr.corporate?.mission || ""),
