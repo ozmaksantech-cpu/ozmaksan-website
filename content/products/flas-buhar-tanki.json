@@ -1,17 +1,34 @@
 {
   "slug": "flas-buhar-tanki",
-  "name": "FLAŞ BUHAR TANKI",
+  "name": "FLAŞ BUHAR TANKLARI",
   "series": "",
   "category": "yardimci",
-  "tagline": "Kondens tankının havalık borusundan kaçan flaş buharı sisteme kazandırmayı amaçlayan ekipmanlardır.",
+  "order": 4,
+  "tagline": "Kondens hattında oluşan flaş buharın ayrıştırılması ve geri kazanımı",
+  "quickSpecs": [
+    {
+      "label": "Ürün Tipi",
+      "value": "Flaş Buhar Tankı"
+    },
+    {
+      "label": "Kullanım Alanı",
+      "value": "Buhar ve kondens sistemleri"
+    },
+    {
+      "label": "Tasarım",
+      "value": "Projeye özel"
+    }
+  ],
+  "intro": "Özmaksan Flaş Buhar Tankları, yüksek basınç ve sıcaklıktaki kondens suyunun daha düşük basınçlı ortama geçişi sırasında oluşan flaş buharın ayrıştırılması ve uygun proseslerde yeniden değerlendirilmesi amacıyla tasarlanmıştır.\n\nBuhar sistemlerinde enerji geri kazanımını destekleyen bu tanklar, flaş buharın yeniden kullanılmasına olanak sağlayarak ısı kayıplarının ve işletme maliyetlerinin azaltılmasına katkıda bulunur.\n\nÖzmaksan Flaş Buhar Tankları, tesisin buhar kapasitesi, kondens debisi, çalışma basıncı ve sıcaklık koşullarına göre projeye özel olarak tasarlanır.",
+  "features": "",
   "fuel": "—",
-  "type": "—",
+  "type": "Flaş Buhar Tankı",
   "capacity": "Projeye özel",
   "pressure": "—",
   "efficiency": "—",
   "image": "assets/products/flas-buhar-tanki.jpg",
-  "pdf": "",
-  "intro": "Kondens tankının havalık borusundan kaçan flaş buharı sisteme kazandırmayı amaçlayan ekipmanlardır. Flaş buharı kondens suyundan ayrıştırma yöntemidir.\n\nKondens tankına dönen kondens suyunun %10. . . 15i flaş buhar kaçağı olarak havaya gider. Bu flaş buharın geri kazanımı bu özel ekipmanlar ile mümkündür.\n\nFaydalı enerjinin geri kazanımı sağlanır.",
-  "features": "",
-  "sourceUrl": "https://ozmaksan.com.tr/urunler/1008/enerji-geri-kazanım-ekipmanları/1017/flaş-buhar-tankı.aspx"
+  "images": [
+    "assets/products/flas-buhar-tanki-2.jpg"
+  ],
+  "pdf": ""
 }

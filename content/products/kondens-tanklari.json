@@ -1,0 +1,40 @@
+{
+  "slug": "kondens-tanklari",
+  "name": "KONDENS TANKLARI",
+  "series": "",
+  "category": "yardimci",
+  "order": 1,
+  "tagline": "Buhar Sistemleri İçin Kondens Toplama ve Geri Kazanım Çözümleri",
+  "quickSpecs": [
+    {
+      "label": "Ürün Tipi",
+      "value": "Kondens Toplama ve Geri Kazanım Tankı"
+    },
+    {
+      "label": "Çalışma Şartları",
+      "value": "Atmosferik veya projeye özel basınçlı tasarım"
+    },
+    {
+      "label": "Malzeme",
+      "value": "Proje gereksinimlerine uygun karbon çelik veya paslanmaz çelik"
+    },
+    {
+      "label": "Seviye Kontrolü",
+      "value": "Otomatik seviye izleme ve pompa kontrolüne uygun"
+    },
+    {
+      "label": "Pompa Sistemi",
+      "value": "Kondens transfer pompaları"
+    }
+  ],
+  "intro": "Özmaksan Kondens Tankları, buhar kullanılan endüstriyel tesislerde proseslerden geri dönen kondens suyunun toplanması, depolanması ve yeniden kazan besi suyu sistemine kazandırılması amacıyla tasarlanmıştır.\n\nBuharın yoğuşması sonucu oluşan yüksek sıcaklıktaki kondens suyunun geri kazanılması, hem su hem de ısı enerjisi kayıplarının azaltılmasına katkı sağlar. Böylece taze su ihtiyacı, su şartlandırma giderleri ve kazan besi suyunun ısıtılması için gereken enerji tüketimi azaltılabilir.\n\nTesisin buhar kapasitesi, kondens dönüş miktarı, çalışma sıcaklığı ve işletme koşulları dikkate alınarak projeye özel olarak tasarlanan Özmaksan Kondens Tankları, buhar sistemlerinin verimli ve kesintisiz çalışmasını destekler.\n\n**Kullanım Alanları**\n\nÖzmaksan Kondens Tankları; tekstil, gıda, kimya, ilaç, kâğıt, ambalaj ve diğer endüstriyel üretim tesislerinde buhar sistemlerinin yardımcı ekipmanı olarak kullanılır.\n\nÖzmaksan Kondens Geri Kazanım Sistemleri, buhar tesislerinde su ve ısı enerjisinin yeniden değerlendirilmesini sağlayarak enerji verimliliğinin artırılmasına, işletme maliyetlerinin azaltılmasına ve sürdürülebilir üretim süreçlerine katkıda bulunur.",
+  "features": "**Enerji Geri Kazanımı:** Yüksek sıcaklıktaki kondens suyunun yeniden kullanılması sayesinde kazan besi suyuna taşınan ısı enerjisinin değerlendirilmesi.\n**Su Tasarrufu:** Kondens suyunun geri kazanılmasıyla taze su tüketiminin ve su şartlandırma ihtiyacının azaltılması.\n**Verimli Kondens Yönetimi:** Proseslerden dönen kondens suyunun kontrollü şekilde toplanması ve kazan besi suyu sistemine aktarılması.\n**Dayanıklı Tank Tasarımı:** İşletme sıcaklığına, kapasiteye ve kullanım koşullarına uygun malzeme ve konstrüksiyon seçenekleri.\n**Otomatik Seviye Kontrolü:** Su seviyesinin izlenmesi ve kondens transfer pompalarının otomatik olarak devreye alınmasına uygun kontrol altyapısı.\n**Isı Yalıtımı:** Isı kayıplarını azaltmaya yönelik yalıtım ve dış kaplama seçenekleri.\n**Sistem Entegrasyonu:** Buhar kazanları, degazör sistemleri, besi suyu pompaları ve diğer yardımcı ekipmanlarla uyumlu çalışma.\n**Kolay İşletme ve Bakım:** Kontrol, temizlik ve bakım işlemlerine erişimi kolaylaştıran bağlantı ve ekipman yerleşimi.",
+  "fuel": "—",
+  "type": "Kondens Toplama ve Geri Kazanım Tankı",
+  "capacity": "Projeye özel",
+  "pressure": "—",
+  "efficiency": "—",
+  "image": "assets/products/kondens-tanklari.jpg",
+  "images": [],
+  "pdf": ""
+}

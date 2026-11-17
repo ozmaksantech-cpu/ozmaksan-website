@@ -1,0 +1,32 @@
+{
+  "slug": "kizgin-yag-rezerv-tanklari",
+  "name": "KIZGIN YAĞ REZERV TANKLARI",
+  "series": "",
+  "category": "yardimci",
+  "order": 3,
+  "tagline": "Kızgın yağ sistemleri için ısı transfer yağı depolama tankları",
+  "quickSpecs": [
+    {
+      "label": "Ürün Tipi",
+      "value": "Kızgın Yağ (Termal Yağ) Rezerv Tankı"
+    },
+    {
+      "label": "Kullanım Alanı",
+      "value": "Kızgın yağ kazanı sistemleri"
+    },
+    {
+      "label": "Tasarım",
+      "value": "Projeye özel"
+    }
+  ],
+  "intro": "Özmaksan Kızgın Yağ Rezerv Tankları, kızgın yağ (termal yağ) sistemlerinde ilk dolum, bakım ve tahliye işlemleri sırasında ihtiyaç duyulan ısı transfer yağının güvenli şekilde depolanması amacıyla kullanılır.\n\nTank hacmi; sistemdeki toplam yağ miktarı, tesis yerleşimi ve işletme koşulları dikkate alınarak projeye özel olarak belirlenir. Rezerv tankları, genleşme tankı ve kızgın yağ transfer pompası ile birlikte kızgın yağ sisteminin tamamlayıcı ekipmanları arasında yer alır.",
+  "features": "",
+  "fuel": "—",
+  "type": "Kızgın Yağ (Termal Yağ) Rezerv Tankı",
+  "capacity": "Projeye özel",
+  "pressure": "—",
+  "efficiency": "—",
+  "image": "assets/products/kizgin-yag-rezerv-tanklari.jpg",
+  "images": [],
+  "pdf": ""
+}

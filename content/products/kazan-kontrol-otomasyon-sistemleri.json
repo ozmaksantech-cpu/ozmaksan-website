@@ -1,0 +1,40 @@
+{
+  "slug": "kazan-kontrol-otomasyon-sistemleri",
+  "name": "KAZAN KONTROL VE OTOMASYON SİSTEMLERİ",
+  "series": "",
+  "category": "yardimci",
+  "order": 7,
+  "tagline": "PLC Kontrollü · Dokunmatik HMI Ekranlı · Merkezi İzleme ve Yönetim",
+  "quickSpecs": [
+    {
+      "label": "Kontrol Sistemi",
+      "value": "PLC tabanlı otomasyon, dokunmatik HMI ekran"
+    },
+    {
+      "label": "Elektrik ve Otomasyon Bileşenleri",
+      "value": "Eaton/Moeller veya muadili kalite seviyesinde"
+    },
+    {
+      "label": "Sistem Görselleştirme",
+      "value": "HMI üzerinden grafiksel ve şematik izleme"
+    },
+    {
+      "label": "Alarm Sistemi",
+      "value": "Sesli ve ışıklı alarm, arıza bildirimi"
+    },
+    {
+      "label": "Tasarım",
+      "value": "Kazan tipine ve proje gereksinimlerine özel"
+    }
+  ],
+  "intro": "Özmaksan Kazan Kontrol ve Otomasyon Sistemleri, endüstriyel kazanların ve yardımcı ekipmanların güvenli, verimli ve kontrollü çalışmasını sağlamak amacıyla tasarlanmıştır.\n\nPLC tabanlı kontrol altyapısı ve dokunmatik HMI operatör ekranları sayesinde kazan, brülör, pompalar ve yardımcı ekipmanların çalışma süreçleri merkezi olarak yönetilebilir. Sistem; sıcaklık, basınç, seviye ve diğer proses parametrelerinin izlenmesine, işletme durumlarının kontrol edilmesine ve olası arıza veya alarm durumlarının operatöre bildirilmesine olanak tanır. Profibus ve Modbus haberleşme protokollerini destekleyen altyapısı sayesinde uzaktan izleme, sistem kontrolü ve teknik servis erişimi sağlanabilir.\n\nKazan tipi, kapasitesi, yakıt özellikleri ve tesisin işletme gereksinimlerine göre projeye özel olarak tasarlanan Özmaksan Kontrol ve Otomasyon Sistemleri, işletme güvenliğinin artırılmasına, enerji kullanımının optimize edilmesine ve operasyonel süreçlerin kolaylaştırılmasına katkı sağlar.\n\nElektrik kontrol panoları, uygulanabilir gereklilikler doğrultusunda EN IEC 61439-1 ve EN IEC 61439-2 standartları esas alınarak tasarlanır ve üretilir.\n\nÖzmaksan Kazan Kontrol ve Otomasyon Sistemleri, endüstriyel ısı üretim tesislerinde güvenli işletme, kolay kontrol ve operasyonel süreklilik sağlayan entegre otomasyon çözümleri sunar.\n\n**Kontrol ve İzleme Fonksiyonları**\n\nKazan sisteminin özelliklerine ve proje kapsamına bağlı olarak aşağıdaki kontrol ve izleme fonksiyonları uygulanabilir:\n\n• Kazan sirkülasyon pompalarının kontrolü\n\n• Ekonomizer sirkülasyon pompalarının kontrolü\n\n• Baca gazı sıcaklık ve emniyet kontrolü\n\n• Kazan suyu sıcaklık kontrolü\n\n• Sistem basınç kontrolü\n\n• Brülör çalışma ve emniyet durumlarının izlenmesi\n\n• Genleşme deposu seviye kontrolü\n\n• Kritik işletme parametrelerinin izlenmesi\n\n• Tehlike ve arıza alarm yönetimi\n\n• Sesli ve ışıklı alarm sistemi",
+  "features": "**PLC Tabanlı Otomatik Kontrol:** Kazan ve yardımcı ekipmanların çalışma süreçlerinin programlanabilir kontrol sistemi üzerinden merkezi olarak yönetilmesi.\n**Dokunmatik HMI Operatör Paneli:** 10” dokunmatik ekran üzerinden sistemin çalışma durumunun, proses değerlerinin ve alarm bilgilerinin izlenmesi.\n**Merkezi Sistem Yönetimi:** Kazan, brülör, sirkülasyon pompaları, ekonomizer ve diğer yardımcı ekipmanların tek bir kontrol sistemi üzerinden yönetilmesi.\n**Proses İzleme ve Kayıt:** Sıcaklık, basınç, seviye ve işletme parametrelerinin anlık olarak izlenmesi; alarm ve geçmiş arıza kayıtlarının takip edilmesi.\n**Güvenlik ve Emniyet Kontrolü:** Kritik çalışma parametrelerinin izlenmesi, emniyet koşullarının kontrol edilmesi ve gerekli durumlarda koruma fonksiyonlarının devreye alınması.\n**Sesli ve Işıklı Alarm Sistemi:** Arıza, uyarı ve kritik işletme durumlarının operatöre sesli ve görsel olarak bildirilmesi.\n**Uzaktan Erişim ve İzleme:** Uygun haberleşme modülleri ve gerekli ağ altyapısı üzerinden uzaktan sistem izleme ve teknik servis erişimi.\n**Esnek ve Modüler Tasarım:** Farklı kazan tipleri, yakıt sistemleri ve tesis ihtiyaçlarına göre genişletilebilir kontrol ve otomasyon altyapısı.",
+  "fuel": "—",
+  "type": "—",
+  "capacity": "Projeye özel",
+  "pressure": "—",
+  "efficiency": "—",
+  "image": "assets/products/kazan-kontrol-otomasyon-sistemleri.jpg",
+  "images": [],
+  "pdf": ""
+}

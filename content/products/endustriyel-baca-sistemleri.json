@@ -1,0 +1,48 @@
+{
+  "slug": "endustriyel-baca-sistemleri",
+  "name": "ENDÜSTRİYEL BACA SİSTEMLERİ",
+  "series": "",
+  "category": "yardimci",
+  "order": 5,
+  "tagline": "Çelik Bacalar · İzoleli Baca Sistemleri",
+  "quickSpecs": [
+    {
+      "label": "Ürün Tipi",
+      "value": "Endüstriyel Çelik ve Paslanmaz Çelik Baca Sistemleri"
+    },
+    {
+      "label": "Kullanım Alanı",
+      "value": "Buhar, sıcak su, kızgın su ve kızgın yağ kazanları"
+    },
+    {
+      "label": "Baca Malzemesi",
+      "value": "S235JR karbon çelik"
+    },
+    {
+      "label": "Sac Kalınlığı",
+      "value": "Baca çapı, sıcaklık ve statik hesaplara göre"
+    },
+    {
+      "label": "Baca Yapısı",
+      "value": "Tek cidarlı veya ısı yalıtımlı"
+    },
+    {
+      "label": "Baca Şapkası",
+      "value": "Projeye özel, Jet Cap / difüzör tipi seçenekler"
+    },
+    {
+      "label": "Aksesuarlar",
+      "value": "Baca şapkası, drenaj"
+    }
+  ],
+  "intro": "Özmaksan Endüstriyel Baca Sistemleri, buhar, sıcak su, kızgın su ve kızgın yağ kazanları ile endüstriyel yakma sistemlerinde oluşan baca gazlarının güvenli ve kontrollü şekilde atmosfere tahliye edilmesi amacıyla tasarlanmıştır.\n\nKazan kapasitesi, yakıt türü, baca gazı sıcaklığı, gaz debisi, basınç koşulları ve tesisin yapısal özellikleri dikkate alınarak projeye özel olarak tasarlanan baca sistemleri, uygun baca çekişinin sağlanmasına ve yakma sistemlerinin verimli ve güvenilir şekilde çalışmasına katkıda bulunur.\n\nÖzmaksan baca sistemleri, S235JR kalite karbon çelik malzeme ile, işletme koşullarına uygun tek cidarlı veya ısı yalıtımlı konstrüksiyonlarda üretilmektedir.\n\nIsı yalıtımlı sistemlerde taş yünü izolasyon ve boyalı çelik veya paslanmaz çelik dış kaplama seçenekleri sunularak baca gazı sıcaklık kayıplarının azaltılması, yüzey sıcaklıklarının kontrol altında tutulması ve yoğuşma riskinin sınırlandırılması hedeflenir.\n\nFlanşlı bağlantı yapısı, modüler tasarım ve projeye uygun taşıyıcı konstrüksiyon seçenekleri sayesinde farklı tesis yerleşimlerine kolaylıkla entegre edilebilir.\n\n**Kullanım Alanları**\n\nÖzmaksan Endüstriyel Baca Sistemleri; tekstil, gıda, kimya, kâğıt, enerji, petrokimya ve diğer endüstriyel üretim tesislerinde kullanılan kazan ve yakma sistemleri için projeye özel çözümler sunar.\n\nÖzmaksan Endüstriyel Baca Sistemleri, dayanıklı malzeme seçenekleri, uygun baca gazı tahliye tasarımı ve tesis ihtiyaçlarına göre geliştirilen konstrüksiyonlarıyla endüstriyel ısı üretim sistemlerinin güvenli, verimli ve uzun ömürlü işletilmesini destekler.",
+  "features": "**Projeye Özel Tasarım:** Kazan kapasitesi, baca gazı debisi, sıcaklığı ve tesis yerleşimine uygun çap, yükseklik ve konstrüksiyon seçenekleri.\n**Malzeme Seçenekleri:** S235JR karbon çelik ile farklı işletme koşullarına uygun üretim.\n**Isı Yalıtımlı Konstrüksiyon:** Taş yünü izolasyon ve koruyucu dış kaplama sayesinde ısı kayıplarının azaltılması ve baca yüzeyinin dış ortam koşullarından korunması.\n**Uygun Baca Çekişi:** Baca gazlarının kontrollü tahliyesini destekleyen, sistemin akış ve basınç kaybı koşullarına uygun tasarım.\n**Modüler ve Flanşlı Bağlantı:** Nakliye, saha montajı ve bakım işlemlerini kolaylaştıran bağlantı ve konstrüksiyon yapısı.\n**Baca Şapkası ve Yağmur Koruması:** Yağmur girişini sınırlandırmaya ve baca gazı çıkışını desteklemeye yönelik projeye uygun baca şapkası seçenekleri.\n**Kontrol ve Bakım Kolaylığı:** Baca gazı ölçüm noktaları, temizleme ve kontrol açıklıkları ile bakım erişimine uygun tasarım.\n**Yardımcı Ekipman Entegrasyonu:** Duman kanalları, ara bağlantılar, yoğuşma tahliye düzenekleri ve gerekli durumlarda by-pass hatlarıyla sistem bütünlüğü.\n**Dayanıklı Konstrüksiyon:** İşletme sıcaklığı, rüzgâr yükleri, dış ortam koşulları ve montaj gereksinimleri dikkate alınarak tasarlanan taşıyıcı sistemler.",
+  "fuel": "—",
+  "type": "Endüstriyel Çelik ve Paslanmaz Çelik Baca Sistemleri",
+  "capacity": "Projeye özel",
+  "pressure": "—",
+  "efficiency": "—",
+  "image": "assets/products/endustriyel-baca-sistemleri.jpg",
+  "images": [],
+  "pdf": ""
+}

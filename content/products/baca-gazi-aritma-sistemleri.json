@@ -1,0 +1,32 @@
+{
+  "slug": "baca-gazi-aritma-sistemleri",
+  "name": "BACA GAZI ARITMA VE PARTİKÜL TUTMA SİSTEMLERİ",
+  "series": "",
+  "category": "yardimci",
+  "order": 6,
+  "tagline": "Siklon · Multisiklon · Sulu Filtre",
+  "quickSpecs": [
+    {
+      "label": "Sistem Seçenekleri",
+      "value": "Siklon / Multisiklon / Sulu Filtre"
+    },
+    {
+      "label": "Uygulama",
+      "value": "Katı yakıtlı kazanlar ve endüstriyel yakma sistemleri"
+    },
+    {
+      "label": "Tasarım",
+      "value": "Projeye özel"
+    }
+  ],
+  "intro": "Özmaksan Baca Gazı Arıtma ve Partikül Tutma Sistemleri, özellikle katı yakıtlı kazanlarda ve endüstriyel yakma sistemlerinde yanma sonucu oluşan baca gazlarının içerdiği kül, kurum ve diğer katı partiküllerin ayrıştırılması amacıyla tasarlanmıştır.\n\nBaca gazlarının atmosfere salınmadan önce arıtılmasını sağlayan bu sistemler, partikül emisyonlarının azaltılmasına ve çevresel performansın iyileştirilmesine katkıda bulunur.\n\nBaca gazı debisi, sıcaklığı, partikül özellikleri ve tesisin emisyon gereksinimlerine bağlı olarak siklon, multisiklon ve sulu filtre seçenekleriyle projeye özel olarak üretilir.\n\n**Siklon Sistemleri**\n\nBaca gazı içerisindeki katı partiküllerin merkezkaç kuvveti etkisiyle gaz akışından ayrıştırılmasını sağlayan mekanik sistemlerdir. Özellikle iri partiküllerin tutulmasında etkili olup basit ve dayanıklı yapıları sayesinde düşük bakım ihtiyacı sunar.\n\n**Multisiklon Sistemleri**\n\nBirbirine paralel çalışan çok sayıda küçük siklon elemanından oluşur. Baca gazlarının siklon elemanları içerisinde dönel harekete yönlendirilmesiyle katı partiküller gaz akışından ayrıştırılır. Tekli siklon sistemlerine kıyasla, uygun tasarım koşullarında daha küçük partiküllerin tutulmasına olanak sağlar.\n\n**Sulu Filtre Sistemleri**\n\nBaca gazlarının su ile temas ettirilmesi prensibiyle çalışan yaş tip arıtma sistemleridir. Gaz içerisindeki partiküller, su damlacıklarıyla temas ederek gaz akışından ayrılır ve sistemden uzaklaştırılır. Uygun tasarımlarda partikül gideriminin yanı sıra suda çözünebilen bazı gaz bileşenlerinin azaltılmasına da katkıda bulunabilir.\n\n**Kullanım Alanları**\n\n• Katı Yakıtlı Buhar Kazanları\n\n• Katı Yakıtlı Sıcak Su ve Kızgın Su Kazanları\n\n• Biyokütle Yakma Sistemleri\n\n• Endüstriyel Yakma Tesisleri\n\n• Partikül İçeren Baca Gazı Sistemleri",
+  "features": "**Etkili Partikül Ayrıştırma:** Baca gazlarında bulunan kül, kurum ve diğer katı partiküllerin sistem özelliklerine uygun yöntemlerle ayrıştırılması.\n**Farklı Arıtma Teknolojileri:** İşletme koşullarına göre mekanik veya yaş tip arıtma seçenekleri.\n**Emisyonların Azaltılması:** Partikül salımının azaltılarak tesisin çevresel performansının iyileştirilmesine katkı sağlanması.\n**Dayanıklı Konstrüksiyon:** Baca gazı sıcaklığı, partikül yükü ve çalışma koşullarına uygun malzeme ve gövde tasarımı.\n**Kolay Bakım ve Temizlik:** Toplanan partiküllerin uzaklaştırılmasını ve sistem bakımını kolaylaştıran tasarım seçenekleri.\n**Projeye Özel Mühendislik:** Baca gazı debisi, sıcaklığı, partikül özellikleri ve hedeflenen emisyon değerlerine göre sistem seçimi ve tasarımı.",
+  "fuel": "—",
+  "type": "—",
+  "capacity": "Projeye özel",
+  "pressure": "—",
+  "efficiency": "—",
+  "image": "assets/products/baca-gazi-aritma-sistemleri.jpg",
+  "images": [],
+  "pdf": ""
+}

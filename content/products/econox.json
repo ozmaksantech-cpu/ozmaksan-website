@@ -1,9 +1,35 @@
 {
   "slug": "econox",
   "name": "ECONOX SICAK SU KAZANLARI",
-  "series": "OPK",
+  "series": "ECONOX – OPK",
   "category": "sicaksu",
+  "subcategory": "sivigaz",
+  "order": 4,
   "tagline": "Sıvı ve gaz yakıtlı, ters alev dönüşlü karşı basınçlı sıcak su kazanı",
+  "quickSpecs": [
+    {
+      "label": "Kazan Tipi",
+      "value": "Karşı Basınçlı Sıcak Su Kazanı"
+    },
+    {
+      "label": "Yanma Teknolojisi",
+      "value": "Ters Alev Dönüşlü"
+    },
+    {
+      "label": "Kapasite Aralığı",
+      "value": "80.000 – 2.000.000 kcal/h"
+    },
+    {
+      "label": "Yakıt Tipi",
+      "value": "Sıvı ve Gaz Yakıt"
+    },
+    {
+      "label": "Çalışma Sıcaklığı",
+      "value": "70/90°C (Dönüş/Gidiş)"
+    }
+  ],
+  "intro": "Özmaksan ECONOX OPK Serisi Sıvı ve Gaz Yakıtlı Sıcak Su Kazanları, ters alev dönüşlü (Reverse Flame) yanma teknolojisiyle yüksek ısıl verim, güvenilir işletme ve uzun hizmet ömrü hedeflenerek tasarlanmıştır.\n\nÖzel yanma odası tasarımı sayesinde brülör alevi geri dönüş yaparak etkin yanma ve yüksek ısı transferi sağlar. Optimize edilmiş duman gazı geçişleri, yakıt tüketiminin azaltılmasına katkıda bulunur.\n\n1.300°C'ye dayanıklı refrakter ön kapak ve cam yünü gövde izolasyonu ısı kayıplarını azaltırken, kompakt tasarımı kazan dairelerinde yer tasarrufu ve montaj kolaylığı sunar.\n\nECONOX Serisi, merkezi ısıtma ve endüstriyel sıcak su sistemleri için verimli ve ekonomik çözümler sunar.\n\n**Standartlar ve Yönetmelikler:** Özmaksan ECONOX OPK Serisi Sıcak Su Kazanları, ürünün kapasitesi ve yakıt tipine göre ilgili TS 497, TS EN 303-1, TS EN 303-2 ve PED 2014/68/EU Basınçlı Ekipmanlar Direktifi, (AB) 2016/426 Gaz Yakan Cihazlar Yönetmelikleri dikkate alınarak tasarlanmaktadır.\n\n**Teknik Bilgilendirme**\n\nECONOX OPK Serisi Sıcak Su Kazanları, farklı kapasite ve işletme gereksinimlerine uygun olarak projelendirilebilmektedir.\n\nStandart üretim programında yer almayan kapasite, çalışma basıncı ve özel donanım talepleri için Özmaksan teknik ekibiyle iletişime geçebilirsiniz.\n\nÖzmaksan, ürünlerin ölçülerinde, teknik özelliklerinde ve tasarımlarında önceden bildirimde bulunmaksızın değişiklik yapma hakkını saklı tutar.\n\n**Opsiyonel Donanımlar ve Kontrol Sistemleri**\n\n**Türbülatörler:** Duman gazı akışını düzenleyerek ısı transfer verimliliğini artırmaya yönelik ekipmanlar.\n\n**Kazan Kontrol Paneli:** Kazanın çalışma parametrelerinin izlenmesini ve kontrolünü sağlayan kumanda sistemi.\n\n**Çift Kazan Kontrol Termostatı:** Kazan suyu sıcaklığının ayarlanan işletme değerlerinde tutulmasını sağlayan iki adet kontrol termostatı.\n\n**Emniyet Limit Termostatı:** Aşırı sıcaklık durumunda brülörü devre dışı bırakarak güvenli işletmeyi destekleyen emniyet elemanı.\n\n**Brülör Açma/Kapama Şalteri:** Brülörün manuel olarak çalıştırılmasını ve durdurulmasını sağlayan kontrol elemanı.\n\n**Kazan Termometresi:** Kazan suyu sıcaklığının izlenmesini sağlayan ölçüm cihazı.",
+  "features": "**Karşı Basınçlı Yanma Teknolojisi:** Yanma odası içerisindeki ters alev dönüşü sayesinde etkin yanma ve yüksek ısı transfer performansı.\n**Yüksek Isıl Verim:** Optimize edilmiş yanma odası ve duman gazı geçişleri sayesinde %90–92 aralığında ısıl verim.\n**Verimli Yanma:** Alevin yanma odası içerisinde geri dönüşü sayesinde yanma sürecinin desteklenmesi ve düşük yakıt tüketimi.\n**Dayanıklı Ön Kapak:** 1.300°C sıcaklığa dayanıklı refrakter malzeme sayesinde yüksek sıcaklık koşullarına uygun yapı.\n**Etkin Isı Yalıtımı:** Cam yünü izolasyonu ve galvaniz sac dış kaplama sayesinde düşük ısı kayıpları.\n**Kompakt Tasarım:** Optimum kazan ölçüleri sayesinde kazan dairelerinde yer tasarrufu ve kolay montaj.\n**Kolay Bakım:** Erişilebilir ön kapak ve bakım noktaları sayesinde temizlik ve servis işlemlerinde kolaylık.\n**Esnek Yakıt Kullanımı:** Sıvı ve gaz yakıtlarla çalışmaya uygun brülör seçenekleri.",
   "fuel": "Sıvı ve Gaz Yakıt",
   "type": "Karşı Basınçlı Sıcak Su Kazanı · Ters Alev Dönüşlü",
   "capacity": "80.000 – 2.000.000 kcal/h",
@@ -11,8 +37,6 @@
   "efficiency": "%90 – 92",
   "image": "assets/products/econox.jpg",
   "pdf": "assets/catalogs/econox.pdf",
-  "intro": "**Teknik Özet**\n\n• Çalışma Sıcaklığı: 70/90°C (Dönüş/Gidiş)\n\nÖzmaksan ECONOX OPK Serisi Sıvı ve Gaz Yakıtlı Sıcak Su Kazanları, ters alev dönüşlü (Reverse Flame) yanma teknolojisiyle yüksek ısıl verim, güvenilir işletme ve uzun hizmet ömrü hedeflenerek tasarlanmıştır.\n\nÖzel yanma odası tasarımı sayesinde brülör alevi geri dönüş yaparak etkin yanma ve yüksek ısı transferi sağlar. Optimize edilmiş duman gazı geçişleri, yakıt tüketiminin azaltılmasına katkıda bulunur.\n\n1.300°C'ye dayanıklı refrakter ön kapak ve cam yünü gövde izolasyonu ısı kayıplarını azaltırken, kompakt tasarımı kazan dairelerinde yer tasarrufu ve montaj kolaylığı sunar.\n\nECONOX Serisi, merkezi ısıtma ve endüstriyel sıcak su sistemleri için verimli ve ekonomik çözümler sunar.\n\n**Standartlar ve Yönetmelikler:** Özmaksan ECONOX OPK Serisi Sıcak Su Kazanları, ürünün kapasitesi ve yakıt tipine göre ilgili TS 497, TS EN 303-1, TS EN 303-2 ve PED 2014/68/EU Basınçlı Ekipmanlar Direktifi, (AB) 2016/426 Gaz Yakan Cihazlar Yönetmelikleri dikkate alınarak tasarlanmaktadır.\n\n**Teknik Bilgilendirme**\n\nECONOX OPK Serisi Sıcak Su Kazanları, farklı kapasite ve işletme gereksinimlerine uygun olarak projelendirilebilmektedir.\n\nStandart üretim programında yer almayan kapasite, çalışma basıncı ve özel donanım talepleri için Özmaksan teknik ekibiyle iletişime geçebilirsiniz.\n\nÖzmaksan, ürünlerin ölçülerinde, teknik özelliklerinde ve tasarımlarında önceden bildirimde bulunmaksızın değişiklik yapma hakkını saklı tutar.\n\n**Opsiyonel Donanımlar ve Kontrol Sistemleri**\n\n**Türbülatörler:** Duman gazı akışını düzenleyerek ısı transfer verimliliğini artırmaya yönelik ekipmanlar.\n\n**Kazan Kontrol Paneli:** Kazanın çalışma parametrelerinin izlenmesini ve kontrolünü sağlayan kumanda sistemi.\n\n**Çift Kazan Kontrol Termostatı:** Kazan suyu sıcaklığının ayarlanan işletme değerlerinde tutulmasını sağlayan iki adet kontrol termostatı.\n\n**Emniyet Limit Termostatı:** Aşırı sıcaklık durumunda brülörü devre dışı bırakarak güvenli işletmeyi destekleyen emniyet elemanı.\n\n**Brülör Açma/Kapama Şalteri:** Brülörün manuel olarak çalıştırılmasını ve durdurulmasını sağlayan kontrol elemanı.\n\n**Kazan Termometresi:** Kazan suyu sıcaklığının izlenmesini sağlayan ölçüm cihazı.",
-  "features": "**Karşı Basınçlı Yanma Teknolojisi:** Yanma odası içerisindeki ters alev dönüşü sayesinde etkin yanma ve yüksek ısı transfer performansı.\n**Yüksek Isıl Verim:** Optimize edilmiş yanma odası ve duman gazı geçişleri sayesinde %90–92 aralığında ısıl verim.\n**Verimli Yanma:** Alevin yanma odası içerisinde geri dönüşü sayesinde yanma sürecinin desteklenmesi ve düşük yakıt tüketimi.\n**Dayanıklı Ön Kapak:** 1.300°C sıcaklığa dayanıklı refrakter malzeme sayesinde yüksek sıcaklık koşullarına uygun yapı.\n**Etkin Isı Yalıtımı:** Cam yünü izolasyonu ve galvaniz sac dış kaplama sayesinde düşük ısı kayıpları.\n**Kompakt Tasarım:** Optimum kazan ölçüleri sayesinde kazan dairelerinde yer tasarrufu ve kolay montaj.\n**Kolay Bakım:** Erişilebilir ön kapak ve bakım noktaları sayesinde temizlik ve servis işlemlerinde kolaylık.\n**Esnek Yakıt Kullanımı:** Sıvı ve gaz yakıtlarla çalışmaya uygun brülör seçenekleri.",
   "specs": {
     "columns": [
       "Model",

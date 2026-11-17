@@ -1,0 +1,52 @@
+{
+  "slug": "endustriyel-depolama-tanklari",
+  "name": "ENDÜSTRİYEL DEPOLAMA TANKLARI",
+  "series": "",
+  "category": "tank",
+  "order": 1,
+  "tagline": "Kimyasal Depolama · Yakıt Depolama · Özel Tasarım Tanklar",
+  "quickSpecs": [
+    {
+      "label": "Ürün Tipi",
+      "value": "Endüstriyel Depolama Tankları"
+    },
+    {
+      "label": "Kullanım Alanı",
+      "value": "Kimyasal, yakıt ve proses akışkanlarının depolanması"
+    },
+    {
+      "label": "Tank Yapısı",
+      "value": "Yatay veya dikey silindirik"
+    },
+    {
+      "label": "Çalışma Basıncı",
+      "value": "Atmosferik veya projeye özel basınçlı"
+    },
+    {
+      "label": "Bağlantılar",
+      "value": "Dolum, boşaltım, havalandırma, drenaj ve proses bağlantıları"
+    },
+    {
+      "label": "Tasarım ve Üretim",
+      "value": "PED 2014/68/AB ve AD 2000"
+    }
+  ],
+  "intro": "**Kapsadığı Ürünler**\n\n• N-Pentan Depolama Tankları\n\n• Butan Tankları\n\n• Klor Tankları\n\n• İzosiyanat Tankları\n\n• Polyol Tankları\n\n• Dikey ve yatık Yakıt Depolama Tankları\n\n• Paslanmaz Çelik Depolama Tankları\n\n• Yatay ve Dikey Endüstriyel Depolama Tankları\n\nÖzmaksan Endüstriyel Depolama Tankları, endüstriyel tesislerde sıvı, gaz ve kimyasal maddelerin güvenli şekilde depolanması ve muhafaza edilmesi amacıyla tasarlanmakta ve üretilmektedir.\n\nDepolanacak akışkanın fiziksel ve kimyasal özellikleri, depolama kapasitesi, çalışma basıncı, sıcaklık ve tesisin işletme koşulları dikkate alınarak projeye özel çözümler sunulmaktadır.\n\nKarbon çelik ve paslanmaz çelik malzeme seçenekleriyle üretilen tanklar; atmosferik veya basınçlı çalışma koşullarına uygun, yatay ve dikey silindirik konstrüksiyonlarda tasarlanabilmektedir. Kimyasal dayanım, korozyon direnci, ısı yalıtımı ve işletme güvenliği gibi gereksinimler, depolanacak ürünün özelliklerine göre değerlendirilmektedir.\n\nTanklar; dolum ve boşaltım bağlantıları, seviye gösterge bağlantıları, basınç ve sıcaklık izleme bağlantıları, gerekli emniyet bağlantıları seçenekleriyle tesisin işletme altyapısına uygun şekilde projelendirilmektedir.\n\n**Kullanım Alanları**\n\nÖzmaksan Endüstriyel Depolama Tankları; kimya, petrokimya, enerji, poliüretan, plastik, tekstil, gıda ve diğer endüstriyel üretim tesislerinde farklı hammaddelerin, yakıtların ve proses akışkanlarının depolanması amacıyla kullanılmaktadır.\n\nÖzmaksan Endüstriyel Depolama Tankları, projeye özel mühendislik çözümleri, malzeme seçenekleri ve işletme koşullarına uygun tasarımlarıyla endüstriyel tesislerin güvenli, dayanıklı ve uzun ömürlü depolama ihtiyaçlarına cevap vermektedir.",
+  "features": "",
+  "fuel": "—",
+  "type": "Endüstriyel Depolama Tankları",
+  "capacity": "Projeye özel",
+  "pressure": "—",
+  "efficiency": "—",
+  "image": "assets/products/endustriyel-depolama-tanklari.jpg",
+  "images": [
+    "assets/products/butan-tanklari.jpg",
+    "assets/products/dik-depolama-tanklari.jpg",
+    "assets/products/izosiyonat-poliol-depolama-tanklari.jpg",
+    "assets/products/klor-tanklari.jpg",
+    "assets/products/n-pentan-depolama-tanklari.jpg",
+    "assets/products/paslanmaz-tanklar.jpg",
+    "assets/products/yakit-depolama-tanklari.jpg"
+  ],
+  "pdf": ""
+}

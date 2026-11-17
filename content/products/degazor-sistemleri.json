@@ -1,0 +1,42 @@
+{
+  "slug": "degazor-sistemleri",
+  "name": "DEGAZÖR SİSTEMLERİ",
+  "series": "",
+  "category": "yardimci",
+  "order": 2,
+  "tagline": "Termik Degazör · Kazan Besi Suyu Hazırlama · Oksijen ve Gaz Giderimi",
+  "quickSpecs": [
+    {
+      "label": "Ürün Tipi",
+      "value": "Termik Degazör Sistemi"
+    },
+    {
+      "label": "Kullanım Alanı",
+      "value": "Endüstriyel buhar kazanları"
+    },
+    {
+      "label": "Kapasite",
+      "value": "Projeye özel"
+    },
+    {
+      "label": "Degazasyon Yöntemi",
+      "value": "Buhar ile termik gaz giderimi"
+    },
+    {
+      "label": "Sistem Yapısı",
+      "value": "Degazör kubbesi ve tankı"
+    }
+  ],
+  "intro": "Özmaksan Degazör Sistemleri, buhar kazanlarının besi suyunda çözünmüş halde bulunan oksijen (O₂) ve karbondioksit (CO₂) gibi gazların uzaklaştırılması amacıyla tasarlanmıştır.\n\nBesi suyundaki çözünmüş gazlar, kazan ve yardımcı ekipmanlarda korozyona yol açarak işletme güvenliğini ve ekipmanların hizmet ömrünü olumsuz etkileyebilir. Termik degazasyon yöntemiyle suyun buhar kullanılarak kontrollü şekilde ısıtılması ve çözünmüş gazların sistemden uzaklaştırılması sayesinde korozyon riski azaltılır ve besi suyu kalitesi iyileştirilir.\n\nTesisin buhar kapasitesi, besi suyu debisi, çalışma basıncı ve işletme koşulları dikkate alınarak projeye özel olarak tasarlanan Özmaksan Degazör Sistemleri, enerji verimliliğinin artırılmasına ve buhar üretim süreçlerinin güvenilir şekilde sürdürülmesine katkı sağlar.\n\nSistemler, çalışma koşullarına uygun karbon çelik veya paslanmaz çelik tank seçenekleriyle üretilmekte olup degazör kubbelerinde AISI 304 paslanmaz çelik kullanılabilmektedir. İşletme basıncı ve sıcaklığına uygun emniyet ve kontrol donanımlarıyla donatılan sistemler; kondens, besi suyu, buhar, havalık, taşma ve drenaj bağlantılarıyla tesis altyapısına entegre edilir.\n\nPLC tabanlı otomasyon sistemleriyle entegrasyona uygun olarak tasarlanabilen degazörler, proses parametrelerinin izlenmesine ve kontrol edilmesine olanak tanıyarak işletme kolaylığı ve operasyonel süreklilik sağlar.\n\n**Kullanım Alanları**\n\nÖzmaksan Degazör Sistemleri; tekstil, gıda, kimya, ilaç, kâğıt, petrokimya ve enerji sektörleri başta olmak üzere endüstriyel buhar üretim tesislerinde kullanılır.\n\nÖzmaksan Termik Degazör Sistemleri, kazan besi suyunun kalitesini iyileştirerek korozyon riskinin azaltılmasına, ekipmanların hizmet ömrünün uzatılmasına ve buhar üretim süreçlerinin güvenli ve verimli şekilde sürdürülmesine katkı sağlar.",
+  "features": "**Etkin Gaz Giderimi:** Kazan besi suyunda çözünmüş oksijen ve karbondioksitin termik yöntemle uzaklaştırılması.\n**Korozyonun Azaltılması:** Çözünmüş gazların neden olduğu korozyon riskinin azaltılarak kazan, boru hatları ve yardımcı ekipmanların korunması.\n**Termik Degazasyon:** Buhar ile doğrudan temas prensibi sayesinde besi suyunun çalışma basıncına karşılık gelen doyma sıcaklığına yaklaştırılması ve çözünmüş gazların ayrıştırılması.\n**Enerji Verimliliği:** Besi suyunun ön ısıtılması sayesinde kazan sistemine aktarılan ısı enerjisinin değerlendirilmesi.\n**Otomatik Seviye Kontrolü:** Tank su seviyesinin izlenmesi ve besi suyu beslemesinin otomatik olarak kontrol edilmesine uygun sistem tasarımı.\n**Buhar Basınç ve Sıcaklık Kontrolü:** Degazasyon işleminin uygun çalışma koşullarında gerçekleştirilmesini sağlayan kontrol ekipmanları.\n**Dayanıklı Konstrüksiyon:** İşletme basıncı, sıcaklık ve kapasite gereksinimlerine uygun malzeme ve üretim seçenekleri.\n**Isı Yalıtımı:** Tank yüzeyindeki ısı kayıplarının azaltılması amacıyla uygulanan yalıtım ve dış kaplama seçenekleri.\n**Sistem Entegrasyonu:** Kondens geri kazanım sistemleri, besi suyu tankları, pompalar ve buhar kazanlarıyla uyumlu çalışma.\n**Kolay İşletme ve Bakım:** Kontrol, temizlik ve bakım işlemlerine erişimi kolaylaştıran ekipman ve bağlantı yerleşimi.",
+  "fuel": "—",
+  "type": "Termik Degazör Sistemi",
+  "capacity": "Projeye özel",
+  "pressure": "—",
+  "efficiency": "—",
+  "image": "assets/products/degazor-sistemleri.jpg",
+  "images": [
+    "assets/media/product-degazor.jpg"
+  ],
+  "pdf": ""
+}

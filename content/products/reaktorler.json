@@ -1,17 +1,46 @@
 {
   "slug": "reaktorler",
-  "name": "REAKTORLER",
+  "name": "ENDÜSTRİYEL REAKTÖRLER VE PROSES TANKLARI",
   "series": "",
   "category": "tank",
-  "tagline": "Petrol Rafinerileri, petrol işleme, temizleme ve ayrımsal damıtma tesislerinde, kimyasal reaksiyonların ve çalışmaların gerektirdiği tesislerde kullanılan, enerji geri kazanımla me",
+  "order": 3,
+  "tagline": "Endüstriyel Reaktörler · Karıştırıcılı Tanklar · Özel Proses Ekipmanları",
+  "quickSpecs": [
+    {
+      "label": "Ürün Tipi",
+      "value": "Endüstriyel Reaktör ve Proses Tankları"
+    },
+    {
+      "label": "Kapasite",
+      "value": "Projeye özel"
+    },
+    {
+      "label": "Konstrüksiyon",
+      "value": "Yatay veya dikey silindirik"
+    },
+    {
+      "label": "Çalışma Basıncı",
+      "value": "Atmosferik veya projeye özel basınçlı"
+    },
+    {
+      "label": "Karıştırıcı Sistemi",
+      "value": "Projeye özel, opsiyonel"
+    },
+    {
+      "label": "Isıtma / Soğutma",
+      "value": "Ceketli, serpantinli veya harici sistem seçenekleri"
+    }
+  ],
+  "intro": "**Kapsadığı Ürünler**\n\n• Endüstriyel Reaktörler\n\n• Karıştırıcılı Tanklar (Mixer)\n\n• Kimyasal Proses Tankları\n\n• Özel Tasarım Proses Ekipmanları\n\nÖzmaksan Endüstriyel Reaktörler ve Proses Tankları, kimya, petrokimya ve çeşitli endüstriyel üretim tesislerinde kimyasal reaksiyonların ve karıştırma, ısıtma, soğutma gibi diğer fiziksel proses işlemlerinin gerçekleştirilmesi amacıyla tasarlanan ve üretilen endüstriyel ekipmanlardır.\n\nProsesin niteliği, işlenecek akışkanın fiziksel ve kimyasal özellikleri, kapasite, çalışma basıncı, sıcaklık ve işletme koşulları dikkate alınarak projeye özel mühendislik çözümleri sunulmaktadır.\n\nKarbon çelik ve paslanmaz çelik malzeme seçenekleriyle üretilen reaktör ve proses tankları; yatay veya dikey konstrüksiyonlarda, atmosferik ya da basınçlı çalışma koşullarına uygun olarak tasarlanabilmektedir.\n\nProses gereksinimlerine bağlı olarak karıştırıcı sistemleri, ısıtma ve soğutma ceketleri, serpantinler, sıcaklık ve basınç kontrol ekipmanları, emniyet donanımları ve otomasyon sistemleriyle entegre edilebilmektedir.\n\n**Kullanım Alanları**\n\nÖzmaksan Endüstriyel Reaktörler ve Proses Tankları; kimya, petrokimya, plastik, poliüretan, boya, gıda, ilaç ve diğer endüstriyel üretim tesislerinde farklı proses gereksinimlerine yönelik olarak kullanılmaktadır.\n\nÖzmaksan Endüstriyel Reaktörler ve Proses Tankları, projeye özel mühendislik yaklaşımı, malzeme seçenekleri ve farklı çalışma koşullarına uygun tasarımlarıyla endüstriyel üretim süreçlerine güvenilir, dayanıklı ve uzun ömürlü çözümler sunmaktadır.",
+  "features": "**Projeye Özel Tasarım:** Proses özellikleri, kapasite, çalışma basıncı, sıcaklık ve işletme gereksinimlerine uygun mühendislik çözümleri.\n**Malzeme Seçenekleri:** Proses akışkanının kimyasal özelliklerine ve çalışma koşullarına uygun karbon çelik veya paslanmaz çelik konstrüksiyon.\n**Karıştırma Sistemleri:** Homojen karışım elde edilmesi, ısı transferinin desteklenmesi ve proses verimliliğinin artırılması amacıyla farklı karıştırıcı tipleriyle entegrasyon.\n**Isıtma ve Soğutma Sistemleri:** Proses sıcaklığının kontrol edilmesine yönelik ceketli, serpantinli veya harici ısı transfer sistemlerine uygun tasarım.\n**Basınç ve Sıcaklık Kontrolü:** Proses koşullarına uygun ölçüm, kontrol ve emniyet ekipmanları.\n**Esnek Konstrüksiyon:** Yatay veya dikey, atmosferik veya basınçlı çalışma koşullarına uygun üretim seçenekleri.\n**Otomasyon Entegrasyonu:** PLC tabanlı kontrol sistemleriyle sıcaklık, basınç, seviye ve karıştırma parametrelerinin izlenmesi ve yönetilmesi.\n**Kolay İşletme ve Bakım:** Proses bağlantıları, kontrol açıklıkları, menhol ve bakım erişim noktalarıyla işletme kolaylığı.",
   "fuel": "—",
-  "type": "—",
+  "type": "Endüstriyel Reaktör ve Proses Tankları",
   "capacity": "Projeye özel",
   "pressure": "—",
   "efficiency": "—",
   "image": "assets/products/reaktorler.jpg",
-  "pdf": "",
-  "intro": "Petrol Rafinerileri, petrol işleme, temizleme ve ayrımsal damıtma tesislerinde, kimyasal reaksiyonların ve çalışmaların gerektirdiği tesislerde kullanılan, enerji geri kazanımla meşgul ekipmanlardır.\n\nTipi : Silindirik tip, Yatık Tip, Bombeli\n\nDizayn Standardı : AD2000 MERKBLATT - EN 13445",
-  "features": "",
-  "sourceUrl": "https://ozmaksan.com.tr/urunler/1007/depolama-tankları-ve-basınçlı-kaplar/1030/reaktorler.aspx"
+  "images": [
+    "assets/products/reaktorler-2.jpg"
+  ],
+  "pdf": ""
 }

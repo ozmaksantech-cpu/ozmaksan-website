@@ -1,0 +1,48 @@
+{
+  "slug": "basincli-kaplar-ve-proses-ekipmanlari",
+  "name": "BASINÇLI KAPLAR VE PROSES EKİPMANLARI",
+  "series": "",
+  "category": "tank",
+  "order": 2,
+  "tagline": "Akümülasyon Tankları · Separatörler · Filtrasyon Sistemleri · Eşanjörler",
+  "quickSpecs": [
+    {
+      "label": "Ürün Tipi",
+      "value": "Basınçlı Kaplar ve Proses Ekipmanları"
+    },
+    {
+      "label": "Konstrüksiyon",
+      "value": "Yatay veya dikey silindirik"
+    },
+    {
+      "label": "Bağlantı Tipi",
+      "value": "Flanşlı, kaynaklı veya projeye uygun"
+    },
+    {
+      "label": "Kontrol Ekipmanları",
+      "value": "Basınç, sıcaklık, seviye ve proses kontrolü"
+    },
+    {
+      "label": "Kalite Kontrol",
+      "value": "Projeye uygun tahribatsız muayene ve basınç testleri"
+    },
+    {
+      "label": "Tasarım ve Uygunluk",
+      "value": "Uygulanabilir kapsamda PED 2014/68/AB, AD 2000 ve ilgili standartlar"
+    }
+  ],
+  "intro": "**Kapsadığı Ürünler**\n\n• Akümülasyon Tankları\n\n• Separatörler\n\n• Kum Filtreleri\n\n• Eşanjörler\n\n• Özel Tasarım Basınçlı Kaplar\n\nÖzmaksan Basınçlı Kaplar ve Proses Ekipmanları, endüstriyel tesislerde basınçlı akışkanların depolanması, akışkanların ayrıştırılması, filtrelenmesi ve ısı transferi işlemlerinin gerçekleştirilmesi amacıyla tasarlanmakta ve üretilmektedir.\n\nProsesin niteliği, akışkanın fiziksel ve kimyasal özellikleri, kapasite, çalışma basıncı, sıcaklık ve işletme koşulları dikkate alınarak projeye özel mühendislik çözümleri sunulmaktadır.\n\nKarbon çelik ve paslanmaz çelik malzeme seçenekleriyle üretilen ekipmanlar; yatay veya dikey konstrüksiyonlarda, farklı basınç ve sıcaklık koşullarına uygun olarak tasarlanabilmektedir.\n\nÜretim süreçlerinde ilgili uluslararası standartlar ve kalite kontrol gereklilikleri esas alınarak kaynaklı imalat, tahribatsız muayene ve basınç testleri uygulanmaktadır. Basınçlı ekipmanlar, uygulanabilir kapsamda PED 2014/68/AB ve AD 2000 gereklilikleri doğrultusunda projelendirilebilmektedir.\n\n**Kullanım Alanları**\n\nÖzmaksan Basınçlı Kaplar ve Proses Ekipmanları; enerji, kimya, petrokimya, gıda, tekstil, kâğıt, plastik ve diğer endüstriyel üretim tesislerinde akışkan yönetimi, filtrasyon, ayrıştırma, ısı transferi ve basınçlı proses uygulamalarında kullanılmaktadır.\n\nÖzmaksan Basınçlı Kaplar ve Proses Ekipmanları, projeye özel mühendislik yaklaşımı, farklı malzeme seçenekleri ve uluslararası standartları esas alan üretim süreçleriyle endüstriyel tesislerin güvenilir, dayanıklı ve uzun ömürlü ekipman ihtiyaçlarına çözüm sunmaktadır.",
+  "features": "**Projeye Özel Mühendislik:** Kapasite, çalışma basıncı, sıcaklık ve proses koşullarına uygun tasarım ve imalat çözümleri.\n**Basınca Dayanıklı Konstrüksiyon:** Tasarım koşullarına uygun malzeme kalınlığı, kaynaklı imalat ve mekanik dayanım hesapları.\n**Malzeme Seçenekleri:** Akışkan özelliklerine ve çalışma koşullarına uygun karbon çelik veya paslanmaz çelik konstrüksiyon.\n**Akışkan Ayrıştırma ve Filtrasyon:** Gaz, sıvı ve katı partiküllerin ayrıştırılması veya filtrelenmesine yönelik proses ekipmanları.\n**Isı Transferi Çözümleri:** Farklı proses akışkanları arasında kontrollü ısı transferinin gerçekleştirilmesine yönelik eşanjör sistemleri.\n**Emniyet ve Kontrol Donanımları:** Çalışma basıncı ve sıcaklığına uygun ölçüm, kontrol ve emniyet ekipmanlarıyla entegrasyon.\n**Kalite Kontrol ve Test:** Proje gereksinimlerine uygun kaynak kontrolleri, tahribatsız muayene ve basınç testleri.\n**Kolay İşletme ve Bakım:** Kontrol açıklıkları, menhol, flanşlı bağlantılar ve bakım erişimine uygun ekipman tasarımı.",
+  "fuel": "—",
+  "type": "Basınçlı Kaplar ve Proses Ekipmanları",
+  "capacity": "Projeye özel",
+  "pressure": "—",
+  "efficiency": "—",
+  "image": "assets/products/basincli-kaplar-ve-proses-ekipmanlari.jpg",
+  "images": [
+    "assets/products/akumulasyon-tanklari.jpg",
+    "assets/products/seperator-tanklari.jpg",
+    "assets/products/kum-filtreleri.jpg"
+  ],
+  "pdf": ""
+}
