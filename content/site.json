@@ -63,9 +63,9 @@
     "Yakıt Depolama Tankları"
   ],
   "corporate": {
-    "vision": "Yüksek basınçlı buhar ve ısı teknolojilerinde uluslararası ölçekte tanınan, yenilikçi ve güvenilir bir dünya markası olmak; enerji verimliliği ve sürdürülebilir üretimde sektöre yön vermek.",
-    "mission": "1976'dan bu yana edindiğimiz mühendislik birikimiyle; müşterilerimizin ihtiyaçlarına uygun, uluslararası standartlarda, güvenli ve verimli basınçlı kap ve kazan çözümleri üretmek, satış sonrası destekle uzun ömürlü iş ortaklıkları kurmak.",
-    "companies": "ÖZMAKSAN Isı Sanayi Tic. A.Ş. çatısı altında; basınçlı kap ve kazan üretimi, enerji geri kazanım sistemleri ve anahtar teslim kazan dairesi kurulumu alanlarında faaliyet gösteren üretim ve mühendislik birimlerimizle hizmet veriyoruz."
+    "vision": "Yarım asırlık mühendislik ve üretim deneyimimizi yenilikçi teknolojilerle birleştirerek endüstriyel ısı ve buhar sistemlerinde uluslararası ölçekte güvenilir ve sürdürülebilir üretimin geleceğine katkıda bulunan öncü kuruluşlardan biri olmak.",
+    "mission": "Sanayinin enerji ihtiyaçlarına güvenilir, verimli ve sürdürülebilir çözümler sunmak; yenilikçi teknolojilerimizle enerji kaynaklarının etkin kullanımına katkı sağlamak ve müşterilerimizin rekabet gücünü artırmak.",
+    "companies": "Dürüstlük ve güvenilirliği esas alan kurumsal kültürümüzle; takım çalışmasına, çalışanlarımıza saygıya, kaliteye ve yenilikçiliğe önem veriyor, müşteri memnuniyetini ve sürdürülebilirliği temel değerlerimiz olarak benimsiyoruz."
   },
   "references": [
     "Mercedes-Benz",
@@ -143,17 +143,28 @@
     "Endüstriyel Çamaşırhane",
     "Boyama & Dokuma",
     "Mobilya & Ağaç",
-    "Petrol & Rafineri"
+    "Petrol & Rafineri",
+    "Plastik & Polimer",
+    "Demir & Çelik",
+    "Çimento & Yapı Malzemeleri",
+    "Enerji & Geri Kazanım",
+    "Deri & Konfeksiyon",
+    "Merkezi Isıtma",
+    "Geri Dönüşüm"
   ],
   "about": {
     "intro": [
-      "ÖZMAKSAN, 1976 yılında ısıtma ve buhar sektöründe hizmet vermek üzere Gaziantep'e kurulmuş olup, uzun yıllardır basınçlı kaplar üretim sektöründe faaliyet göstermektedir.",
-      "17.000 m² üretim tesisimizde yüksek basınçlı buhar kazanları, kızgın su ve kızgın yağ kazanları, atık ısı kazanları, buhar jeneratörleri, ısı eşanjörleri, ekonomizerler, akümülasyon tankları ve enerji geri kazanım ekipmanları üretmekteyiz.",
-      "Güneydoğu Anadolu bölgesinin en geniş üretim kapasitesine sahip firmalarından biri olarak, modern üretim altyapısı ve uzman mühendis kadrosuyla yurt içi ve yurt dışında önde gelen sanayi kuruluşlarının tedarikçisiyiz."
+      "Ege Üniversitesi Makine Mühendisliği Bölümü mezunu Makine Mühendisi Ahmet Yağcı tarafından 1976 yılında Gaziantep'te kurulan Özmaksan Isı Sanayi ve Ticaret A.Ş., endüstriyel ısıtma sistemleri, buhar teknolojileri ve basınçlı ekipmanlar alanında faaliyet gösteren köklü bir sanayi kuruluşudur.",
+      "Kuruluşundan bu yana üretim kalitesi, mühendislik anlayışı ve güvenilirlik ilkeleri doğrultusunda gelişimini sürdürerek Türkiye'nin endüstriyel ısı ve buhar teknolojileri sektöründe köklü kuruluşlarından biri haline gelmiştir.",
+      "50 yıllık üretim deneyimi ve mühendislik birikimiyle Özmaksan; endüstriyel tesislerin ısı, buhar ve enerji ihtiyaçlarına yönelik güvenilir, verimli ve sürdürülebilir çözümler geliştirmektedir.",
+      "17.000 m² üretim tesisinde yüksek basınçlı buhar kazanları, kızgın su ve kızgın yağ kazanları, atık ısı kazanları, buhar jeneratörleri, endüstriyel ısıtma sistemleri ve enerji geri kazanım ekipmanları üretmektedir.",
+      "Ürünlerinin tasarımından imalatına, kalite kontrolünden test ve devreye alma aşamalarına kadar tüm süreçlerde mühendislik disiplini, uluslararası standartlar ve müşteri ihtiyaçları esas alınmaktadır.",
+      "Geniş ürün yelpazesiyle tekstil, gıda, kimya, petrokimya, ilaç, enerji ve diğer birçok sanayi sektörüne hizmet veren Özmaksan, yurt içindeki güçlü konumunun yanı sıra uluslararası pazarlarda da faaliyetlerini sürdürmektedir.",
+      "Bugün ikinci kuşak aile üyelerinin de yönetimde yer aldığı Özmaksan, kurucusundan devraldığı mühendislik anlayışını ve üretim kültürünü modern teknolojilerle birleştirerek yarım asırlık birikimini geleceğe taşımakta, sanayinin güvenilir çözüm ortağı olmayı sürdürmektedir."
     ],
     "stats": [
       {
-        "value": "49",
+        "value": "50",
         "suffix": "",
         "label": "Yıllık Tecrübe"
       },
@@ -238,20 +249,32 @@
   },
   "faq": [
     {
-      "q": "Hangi standartlara uygun üretim yapıyorsunuz?",
-      "a": "97/23/EC (PED), 2014/68/EU, EN 12953, EN 303-5, AD 2000 Merkblatt, ASME, TSE ve CE standartlarına uygun üretim yapılmaktadır. Basınç ve güvenlik testleri bağımsız kuruluş gözetiminde gerçekleştirilir."
+      "q": "Özmaksan projeye özel kazan ve basınçlı ekipman üretiyor mu?",
+      "a": "Evet. Özmaksan, standart ürünlerinin yanı sıra müşterilerinin proses ihtiyaçları, kapasite, çalışma basıncı, sıcaklık ve yakıt özelliklerine göre projeye özel kazan ve basınçlı ekipman tasarlamakta ve üretmektedir."
     },
     {
-      "q": "Montaj ve devreye alma hizmeti veriyor musunuz?",
-      "a": "Evet. Endüstriyel sistemlerin montajı ve devreye alınması konusunda uzman ekibimizle hizmet vermekteyiz. EPDK sertifikalı doğalgaz dönüşüm hizmeti de sunulmaktadır."
+      "q": "Özmaksan ürünleri hangi uluslararası standartlara uygun üretilmektedir?",
+      "a": "Özmaksan basınçlı ekipmanları, 2014/68/AB Basınçlı Ekipmanlar Yönetmeliği (PED) kapsamında; TS EN 12953, TS EN 12952, TS EN 13445, AD 2000 ve ASME gibi ulusal ve uluslararası kabul görmüş teknik standartlar ve kurallar esas alınarak üretilmektedir."
     },
     {
-      "q": "Hangi yakıt türleriyle çalışan kazanlarınız var?",
-      "a": "Doğalgaz, LPG, LNG, sıvı yakıt ve katı yakıt (kömür, prina, odun talaşı, pelet, meyve kabuğu) ile çalışan geniş bir ürün yelpazemiz bulunmaktadır. Ayrıca çift yakıtlı (dual) çözümler sunulur."
+      "q": "Özmaksan ürünleri CE işaretine sahip midir?",
+      "a": "Evet. Gerekli uygunluk değerlendirme süreçlerini tamamlayan ürünlerimiz CE işaretiyle piyasaya sunulmaktadır."
     },
     {
-      "q": "İhracat yapıyor musunuz?",
-      "a": "Evet. Ortadoğu, Kuzey Afrika ve Orta Asya başta olmak üzere birçok ülkeye doğrudan ihracat yapmaktayız. Üretimimizin yaklaşık %40'ı yurt dışı pazarlarına yöneliktir."
+      "q": "Özmaksan ürünlerinin kalite kontrol, muayene ve test süreçleri nasıl gerçekleştirilmektedir?",
+      "a": "Özmaksan basınçlı ekipmanları, ilgili standartlar doğrultusunda hidrostatik basınç testleri, ısıl işlem ve tahribatsız muayene (NDT) süreçlerine tabi tutulmaktadır. Görsel muayene (VT), sıvı penetrant (PT) ve radyografik muayene (RT – X-Ray) yöntemleri uygulanmakta; gerekli kontroller bağımsız denetim kuruluşlarının gözetiminde gerçekleştirilmektedir."
+    },
+    {
+      "q": "Özmaksan, ürettiği sistemlerin bütünlüğünü ve ekipman uyumunu nasıl sağlamaktadır?",
+      "a": "Özmaksan, projeye özel üretilen kazan ve yardımcı ekipmanların fabrika içi prova montajını gerçekleştirerek mekanik bağlantıların, ekipman uyumunun ve sistem bütünlüğünün sevkiyat öncesinde kontrol edilmesini sağlamaktadır."
+    },
+    {
+      "q": "Özmaksan'da kaynakçı yeterlilikleri nasıl belgelendirilmekte ve kontrol edilmektedir?",
+      "a": "Özmaksan’da kaynaklı imalat işlemleri, Türk Loydu tarafından belgelendirilmiş kaynakçı ve kaynak operatörleri tarafından gerçekleştirilmektedir. Yeterlilikler, TS EN ISO 9606-1, TS EN ISO 14732 ve ilgili AD 2000 gereklilikleri doğrultusunda 6 aylık periyodik kontroller ve süreklilik onaylarıyla takip edilmektedir."
+    },
+    {
+      "q": "Özmaksan müşteri tesislerinde montaj ve devreye alma hizmeti sunuyor mu?",
+      "a": "Evet. Özmaksan, yurt içi ve yurt dışındaki endüstriyel tesislerde kazan ve yardımcı sistemlerin yerinde montajı, sistem entegrasyonu ve devreye alınması süreçlerinde uzman teknik kadrosuyla hizmet sunmaktadır."
     }
   ],
   "company": {
@@ -274,9 +297,160 @@
     },
     "web": "www.ozmaksan.com.tr",
     "address": "4. Organize Sanayi Bölgesi, 83404 Nolu Cadde No:10, Başpınar / Gaziantep / Türkiye",
-    "years": "49",
+    "years": "50",
     "email": "ozmaksan@ozmaksan.com.tr",
     "fax": "+90 342 232 61 13",
-    "slogan": "YÜKSEK ISI TEKNOLOJİSİ"
-  }
+    "slogan": "YÜKSEK ISI TEKNOLOJİSİ",
+    "companies": [
+      "Özmaksan Isı Sanayi ve Ticaret A.Ş.",
+      "Özmaksan İç ve Dış Ticaret A.Ş."
+    ]
+  },
+  "sectorGroups": [
+    {
+      "title": "Gıda ve İçecek Sanayi",
+      "items": [
+        "Bitkisel yağ üretim ve rafinasyon tesisleri",
+        "Çikolata ve şekerleme üretim tesisleri",
+        "Makarna üretim hatları",
+        "Bulgur haşlama ve kurutma tesisleri",
+        "Şeker fabrikaları",
+        "Süt ve süt tozu üretim tesisleri",
+        "Konserve ve salça üretim tesisleri",
+        "Tavuk kesimhaneleri ve rendering tesisleri",
+        "Yem üretim tesisleri"
+      ]
+    },
+    {
+      "title": "Tekstil, Halı ve Konfeksiyon Sanayi",
+      "items": [
+        "Tekstil boyahaneleri",
+        "Tekstil terbiye ve fikse hatları",
+        "Halı üretim tesisleri",
+        "Nonwoven (dokunmamış kumaş) üretim tesisleri",
+        "Konfeksiyon ve endüstriyel ütüleme tesisleri",
+        "Deri işleme ve tabakhane tesisleri"
+      ]
+    },
+    {
+      "title": "Kimya, Petrokimya ve Plastik Sanayi",
+      "items": [
+        "Kimyasal üretim ve işleme tesisleri",
+        "Petrol rafinerileri",
+        "LPG dolum ve depolama tesisleri",
+        "Poliüretan üretim tesisleri",
+        "XPS ve EPS üretim tesisleri",
+        "Klor ve klor türevleri üretim tesisleri",
+        "İlaç üretim tesisleri"
+      ]
+    },
+    {
+      "title": "Kağıt, Ambalaj ve Ahşap Sanayi",
+      "items": [
+        "Kağıt ve selüloz üretim tesisleri",
+        "Oluklu mukavva üretim tesisleri",
+        "Ambalaj üretim tesisleri",
+        "Ahşap ve mobilya üretim tesisleri",
+        "Sandviç panel üretim tesisleri"
+      ]
+    },
+    {
+      "title": "İnşaat, Yapı Malzemeleri ve Metal Sanayi",
+      "items": [
+        "Çimento üretim tesisleri",
+        "Beton kürleme tesisleri",
+        "Demir-çelik üretim ve işleme tesisleri",
+        "Metal işleme tesisleri"
+      ]
+    },
+    {
+      "title": "Enerji ve Çevre Teknolojileri",
+      "items": [
+        "Jeotermal enerji tesisleri",
+        "Hidroelektrik enerji santralleri",
+        "Atık ısı geri kazanım uygulamaları",
+        "Geri dönüşüm ve atık işleme tesisleri",
+        "Biyokütle ve alternatif yakıt uygulamaları"
+      ]
+    },
+    {
+      "title": "Tarım ve Hayvancılık",
+      "items": [
+        "Seracılık ve sera ısıtma sistemleri",
+        "Kümes hayvancılığı tesisleri",
+        "Hayvancılık ve besicilik tesisleri",
+        "Tarımsal ürün kurutma tesisleri"
+      ]
+    },
+    {
+      "title": "Endüstriyel Hizmet ve Yardımcı Prosesler",
+      "items": [
+        "Endüstriyel çamaşırhaneler",
+        "Şişe ve ambalaj yıkama tesisleri",
+        "Endüstriyel temizlik ve dezenfeksiyon uygulamaları",
+        "Buhar ve sıcak su gerektiren yardımcı üretim prosesleri"
+      ]
+    }
+  ],
+  "certGroups": [
+    {
+      "title": "Basınçlı Ekipmanlar ve Kazan Tasarımı",
+      "items": [
+        {
+          "code": "2014/68/AB",
+          "note": "Basınçlı Ekipmanlar Yönetmeliği (PED)"
+        },
+        {
+          "code": "TS EN 12953",
+          "note": "Silindirik Gövdeli Kazanlar"
+        },
+        {
+          "code": "TS EN 12952",
+          "note": "Su Borulu Kazanlar ve Yardımcı Tesisatlar"
+        },
+        {
+          "code": "TS EN 13445",
+          "note": "Alevle Temas Etmeyen Basınçlı Kaplar"
+        },
+        {
+          "code": "AD 2000-Merkblatt",
+          "note": "Basınçlı Ekipmanların Tasarım ve İmalatına İlişkin Teknik Kurallar"
+        },
+        {
+          "code": "ASME Boiler and Pressure Vessel Code",
+          "note": "Proje gerekliliklerine bağlı olarak uygulanan uluslararası tasarım ve imalat kuralları"
+        }
+      ]
+    },
+    {
+      "title": "Kaynak ve İmalat Kalitesi",
+      "items": [
+        {
+          "code": "TS EN ISO 15614-1",
+          "note": "Kaynak Prosedürlerinin Yeterlilik Deneyleri"
+        },
+        {
+          "code": "TS EN ISO 9606-1",
+          "note": "Kaynakçıların Yeterlilik Sınavları"
+        },
+        {
+          "code": "TS EN ISO 14732",
+          "note": "Mekanize ve Otomatik Kaynak Operatörlerinin Yeterlilikleri"
+        },
+        {
+          "code": "TS EN ISO 3834-2",
+          "note": "Metalik Malzemelerin Ergitme Kaynağı İçin Kapsamlı Kalite Gereklilikleri"
+        }
+      ]
+    },
+    {
+      "title": "Kalite Yönetim Sistemi",
+      "items": [
+        {
+          "code": "TS EN ISO 9001:2015",
+          "note": "Kalite Yönetim Sistemleri"
+        }
+      ]
+    }
+  ]
 }
